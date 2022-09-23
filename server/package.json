@@ -21,6 +21,7 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "luxon": "^3.0.3",
     "nodemon": "^2.0.20"
   }
 }
