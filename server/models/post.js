@@ -7,6 +7,7 @@ const postSchema = new Schema({
     body: {type: String, required:true},
     comments: {type: Schema.Types.ObjectId, ref: 'Comment'},
     timestamp: {type: Date, default: Date.now},
+    published: {type: Boolean, require:true}
 })
 
 postSchema.virtual('timestamp_formatted').get(function(){
