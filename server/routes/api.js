@@ -7,17 +7,17 @@ const apiController = require('../controllers/apiControllers');
 router.get('/posts', apiController.fetch_posts);
 
 // API para buscar un determinado POST en la base da datos junto con sus comentarios.
-router.get('/post/:name', function(req, res, next){
+router.get('/post/:title', function(req, res, next){
     return res.json('API to fetch a single POST and its comments');
 });
 
 // API para crear un nuevo comentario
-router.post('/post/:name/create-comment', function(req, res, next){
+router.post('/post/:title/create-comment', function(req, res, next){
     return res.json('Create new comment');
 })
 
 // API para crear un nuevo POST
-router.post('/post/:name/create-post', function(req, res, next){
+router.post('/post/:title/create-post', function(req, res, next){
     return res.json('Create new post');
 })
 
