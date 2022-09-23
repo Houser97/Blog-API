@@ -1,3 +1,4 @@
+const { DateTime } = require('luxon');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -8,3 +9,8 @@ const postSchema = new Schema({
     timestamp: {type: Date, default: Date.now},
 })
 
+postSchema.virtual('timestamp_formatted').get(function(){
+    return DateTime.fromJSDate(this.timestamp).toLocaleString(DateTime.DATE_MED);
+})
+
+module.exports = mongoose.model('Post', postSchema);
