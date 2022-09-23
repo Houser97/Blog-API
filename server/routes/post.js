@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// Renderizar un POST en específico.
+// Renderizar un POST en específico y sus comentarios.
 router.get('/:name', function(req, res, next){
     return res.send('Here goes a post');
 });
@@ -15,5 +15,14 @@ router.get('/:name/edit', function(req, res, next){
 router.get('/:name/delete', function(req, res, next){
     return res.send('Here should be deleted a specific post');
 });
+
+// ------------- Rutas para comentarios. -------------
+// ---------------------------------------------------
+
+// Ruta para crear comentario en un POST
+router.get('/:name/create-comment', function(req, res, next){
+    return res.send('Here should be created a comment');
+});
+
 
 module.exports = router;
