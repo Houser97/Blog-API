@@ -17,6 +17,7 @@ require('dotenv').config();
 
 // Colocar link de acceso a base de datos.
 const MongoDB = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.hfuvxe2.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`
+mongoose.connect(MongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Obtener conexión por defecto.
 const db = mongoose.connection;
