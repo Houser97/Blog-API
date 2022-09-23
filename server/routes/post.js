@@ -7,13 +7,13 @@ router.get('/:name', function(req, res, next){
 });
 
 // Editar un POST (exclusivo del dueño del POST).
-router.get('/:name/edit', function(res, req, next){
+router.get('/:name/edit', function(req, res, next){
     return res.send('Here should be edited a specific post');
 });
 
 // Eliminar un POST (exclusivo del dueño del POST).
-router.get('/:name/delete', function(res, req, next){
-    return res.send('Here should be edited a specific post');
+router.get('/:name/delete', function(req, res, next){
+    return res.send('Here should be deleted a specific post');
 });
 
 module.exports = router;
