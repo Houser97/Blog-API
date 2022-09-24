@@ -5,5 +5,15 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 0px;
+    padding: 20px 0px;
+}
+
+.presentation-h1 {
+    font-size: 60px;
+}
+
+.span-h1{
+    margin-left: 5px;
+    height: 100%;
+    border: 2px rgb(72, 71, 71) solid;
 }
