@@ -13,7 +13,7 @@ const Navbar = () => {
             ${activeLink === 'Home' ? 'activeLink' : ''}`} 
             onClick={() => setActiveLink('Home')}>Home</a>
 
-            <a className={`link-navbar ${activeLink === 'Posts' ? 'activeLink' : ''}`} 
+            <a href = '#posts' className={`link-navbar ${activeLink === 'Posts' ? 'activeLink' : ''}`} 
             onClick={() => setActiveLink('Posts')}>Posts</a>
         </div>
     </nav>

@@ -32,3 +32,8 @@
 .activeLink {
     color: white;
 }
+
+a{
+    color: rgba(255, 255, 255, 0.749);
+    text-decoration: none;
+}
