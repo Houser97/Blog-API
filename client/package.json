@@ -35,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "luxon": "^3.0.3",
+    "moment": "^2.29.4"
   }
 }
