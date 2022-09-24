@@ -1,5 +1,10 @@
 .posts{
     width: 100%;
     background-color: #2451d9;
-    padding: 100px 30px;
+    padding: 100px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 300px));
+    justify-content: center; align-items: center;
+    gap: 50px;
 }
