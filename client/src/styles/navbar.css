@@ -1,7 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
 .navbar {
     width: 100%;
-    background-color: #242124;
+    background-color: #080808;
     display: flex;
-    padding: 30px 30px;
+    padding: 20px 60px;
     justify-content: space-between;
+    font-family: 'Passion One', cursive;
+    align-items: center;
+}
+
+.navbar .logo{
+    font-size: 46px;
+    color: white;
+}
+
+.navbar .a-links{
+    color: rgba(255, 255, 255, 0.749);
+    font-size: 22px;
+}
+
+.a-links .first-navbar-link{
+    margin-right: 30px;
+}
+
+.a-links .link-navbar{
+    cursor: pointer;
+}
+
+.activeLink {
+    color: white;
 }
