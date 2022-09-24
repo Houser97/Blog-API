@@ -1,4 +1,7 @@
 .App {
-  background-color: #36454f;
   width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
