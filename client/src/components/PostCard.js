@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/postCard.css'
-import { DateTime } from 'luxon';
+import moment from 'moment'
 
 const PostCard = ({title, timestamp}) => {
 
     const [formattedDate, setFormattedDate] = useState(timestamp);
 
     useEffect(() => {
-        setFormattedDate(prev => DateTime.fromJSDate(prev).toLocaleString(DateTime.DATE_MED))
+        setFormattedDate(moment(timestamp).format('MMM Do yyyy'))
     }, [])
     
     return (

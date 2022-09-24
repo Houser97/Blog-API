@@ -37,7 +37,7 @@
     ]
   },
   "devDependencies": {
-    "luxon": "^3.0.3",
+    "dateformat": "^5.0.3",
     "moment": "^2.29.4"
   }
 }
