@@ -9,6 +9,7 @@
     font-family: 'Passion One', cursive;
     align-items: center;
     position: fixed;
+    z-index: 5;
 }
 
 .navbar .logo{

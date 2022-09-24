@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className='navbar'>
         <div className='navbar-item logo'>My Blog-API</div>
         <div className='navbar-item a-links'>
-            <a className={`link-navbar first-navbar-link 
+            <a href = '#home' className={`link-navbar first-navbar-link 
             ${activeLink === 'Home' ? 'activeLink' : ''}`} 
             onClick={() => setActiveLink('Home')}>Home</a>
 

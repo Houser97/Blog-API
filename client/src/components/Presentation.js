@@ -39,7 +39,7 @@ const Presentation = () => {
     }
 
     return (
-    <section className='home'>
+    <section id='home' className='home'>
         <h1 className='presentation-h1'>
             {text}
             <span className='span-h1'></span>

@@ -14,7 +14,7 @@ const PostList = () => {
   }, [])
 
   return (
-    <section className='posts'>
+    <section id='posts' className='posts'>
         {backendPosts === '' || backendPosts === 'There was an error' ? 
         'There was an error' : 
         backendPosts.map((post, index) => {
