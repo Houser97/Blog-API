@@ -5,15 +5,24 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 0px;
+    padding: 60px 90px;
+    font-family: 'Passion One', cursive;
 }
 
 .presentation-h1 {
-    font-size: 60px;
+    font-size: 120px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    padding: 10px 0px; margin: 0px;
 }
 
 .span-h1{
     margin-left: 5px;
     height: 100%;
     border: 2px rgb(72, 71, 71) solid;
+}
+
+.presentation-p{
+    font-size: 24px;
+    font-weight: 0;
 }

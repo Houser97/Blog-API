@@ -44,7 +44,7 @@ const Presentation = () => {
             {text}
             <span className='span-h1'></span>
         </h1>
-        <p>
+        <p className='presentation-p'>
             This blog was created as a project for The Odin Project. It involves knowledge about NodeJS as the backend and React as the Frontend.
         </p>
     </section>
