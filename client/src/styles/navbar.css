@@ -8,6 +8,7 @@
     justify-content: space-between;
     font-family: 'Passion One', cursive;
     align-items: center;
+    position: fixed;
 }
 
 .navbar .logo{

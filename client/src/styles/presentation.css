@@ -1,11 +1,11 @@
-.presentation{
+.home{
     background-color: white;
     width: 100%;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 60px 90px;
+    height: 100vh;
     font-family: 'Passion One', cursive;
 }
 
