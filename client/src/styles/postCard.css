@@ -1,0 +1,7 @@
+.postCard {
+    display: flex; flex-flow: column;
+    width: 300px; height: 400px;
+    border-radius: 10px;
+    justify-content: center; align-items: center;
+    background-color: rgb(235, 232, 232);
+}
