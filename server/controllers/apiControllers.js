@@ -16,13 +16,13 @@ exports.fetch_post_and_comments = function(req, res, next){
         post(callback){
             let title = req.params.title;
             title = title.replace(/-/g, ' ');
-            Post.find({title: {$eq: title}}).populate('comment').exec(callback);
+            Post.find({'title': {$eq: title}}).exec(callback);
         },
         comments(callback){
             Comment.find().exec(callback);
         },
     }, function(err, results){
         if(err) return next(err);
-        return res.json(results)
+        return res.json(results.post)
     })
 }
