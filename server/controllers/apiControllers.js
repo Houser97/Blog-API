@@ -23,6 +23,6 @@ exports.fetch_post_and_comments = function(req, res, next){
         },
     }, function(err, results){
         if(err) return next(err);
-        return res.json(results.post)
+        return res.json(results)
     })
 }
