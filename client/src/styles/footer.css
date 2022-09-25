@@ -8,6 +8,7 @@
     align-items: center;
     padding: 30px 60px;
     font-family: 'Passion One', cursive;
+    z-index: 15;
 }
 
 .footer .logo {
