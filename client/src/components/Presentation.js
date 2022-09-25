@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/presentation.css'
+import bg_image from '../assets/bg-blog.jpg'
 
 const Presentation = () => {
 
@@ -40,6 +41,7 @@ const Presentation = () => {
 
     return (
     <section id='home' className='home'>
+        <div className='bg-opacity'></div>
         <h1 className='presentation-h1'>
             {text}
             <span className='span-h1'></span>
