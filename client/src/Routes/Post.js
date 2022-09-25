@@ -13,12 +13,13 @@ const Post = () => {
   useEffect(() => {
     fetch(`/api/post/${title}`).
       then(response => response.json()).
-      then(data => setBackendTitle(data)).catch(error => setBackendTitle(error))
+      then(data => setBackendTitle(data)).catch(() => setBackendTitle('error'))
   }, [])
 
   return (
     <div className='Post-website'>
-        {backendTitle}
+        {backendTitle === '' ? '' : backendTitle[0].title}
+        <Footer />
     </div>
   )
 }
