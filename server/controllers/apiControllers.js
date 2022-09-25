@@ -14,7 +14,9 @@ exports.fetch_posts = function(req, res, next){
 exports.fetch_post_and_comments = function(req, res, next){
     async.parallel({
         post(callback){
-            Post.find({title: {$eq: req.params.title}}).populate('comment').exec(callback);
+            let title = req.params.title;
+            title = title.replace(/-/g, ' ');
+            Post.find({title: {$eq: title}}).populate('comment').exec(callback);
         },
         comments(callback){
             Comment.find().exec(callback);
