@@ -14,15 +14,12 @@ const Post = () => {
     fetch(`/api/post/${title}`).
       then(response => response.json()).
       then(data => setBackendTitle(data)).then(console.log(backendTitle.post)).catch(() => setBackendTitle('error'))
-      
   }, [])
 
   return (
     <div className='Post-website'>
         <Navbar />
-        {backendTitle === '' ? '' : backendTitle.post.map((post, index) =>{
-          <PostComponent {...post} key = {`post-${index}`}/>
-        })}
+        {backendTitle === '' ? '' : <PostComponent {...backendTitle.post[0]} />}
         <Footer />
     </div>
   )

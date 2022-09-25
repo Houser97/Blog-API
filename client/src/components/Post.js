@@ -1,10 +1,12 @@
 import React from 'react'
-import TitlePost from './TitlePost'
+import '../styles/PostComponent.css'
 
-const PostComponent = ({title, body, timestamp, comments}) => {
+const PostComponent = ({title, body, timestamp}) => {
   return (
     <div className='post-component'>
-        <TitlePost title = {title}/>
+        <div className='post-component-title'>{title}</div>
+        <div className='post-component-body'>{body}</div>
+        <div className='post-component-timestamp'>{timestamp}</div>
     </div>
   )
 }
