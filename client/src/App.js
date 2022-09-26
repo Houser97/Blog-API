@@ -8,7 +8,7 @@ import Presentation from './components/Presentation'
 const App = () => {
   return (
     <div className='App'>
-      <Navbar />
+      <Navbar isInHome = {true} />
       <Presentation />
       <PostList />
       <Footer />

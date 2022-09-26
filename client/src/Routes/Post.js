@@ -18,7 +18,7 @@ const Post = () => {
 
   return (
     <div className='Post-website'>
-        <Navbar />
+        <Navbar isInHome = {false} />
         {backendPost === '' ? '' : <PostComponent {...backendPost.post[0]} />}
         <Footer />
     </div>
