@@ -1,5 +1,13 @@
 .post-component{
-    padding: 100px 50px;
+    padding: 120px 50px;
     width: 100%;
-    color:black
+    color:black;
+    display: flex; flex-flow: column;
+    align-items: center;
+}
+
+.post-component-title {
+    font-size: 50px;
+    margin: 0px;
+    margin-bottom: 20px;
 }
