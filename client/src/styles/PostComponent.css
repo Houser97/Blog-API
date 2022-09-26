@@ -9,5 +9,9 @@
 .post-component-title {
     font-size: 50px;
     margin: 0px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: solid 1px black;
+    width: 60%;
+    text-align: center;
 }
