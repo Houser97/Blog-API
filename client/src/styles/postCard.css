@@ -3,13 +3,28 @@
 .postCard {
     display: flex; flex-flow: column;
     width: 250px; height: 300px;
-    padding-top: 20px;
     justify-content: flex-start; align-items: center;
     background-color: #fffffe;
     color: #0a0a0a;
     font-family: 'MonteCarlo', cursive;
     font-size: 30px;
     font-weight: 900;
+    position: relative;
+}
+
+.timestamp-post-card{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 20px;
+}
+
+.title-post-card{
+    background-color: #2d2b2b;
+    width: 100%;
+    text-align: center;
+    padding: 40px 0px;
+    color: orange;
 }
 
 .Link-Router {
