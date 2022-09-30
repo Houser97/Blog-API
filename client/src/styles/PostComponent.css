@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Neuton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
 
 .post-component{
     padding: 120px 50px;
@@ -10,18 +11,22 @@
 }
 
 .post-component-title {
-    font-size: 50px;
+    font-size: 60px;
     margin: 0px;
     padding-bottom: 20px;
     margin-bottom: 30px;
     border-bottom: solid 1px black;
     width: 60%;
     text-align: center;
+    font-family: 'MonteCarlo', cursive;
 }
 
 .post-component-timestamp{
     position: absolute;
     bottom: 50px; right: 350px;
+    font-family: 'MonteCarlo', cursive;
+    font-weight: 800;
+    font-size: 26px;
 }
 
 .post-component-body{
