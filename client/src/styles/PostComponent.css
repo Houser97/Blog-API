@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Neuton&display=swap');
+
 .post-component{
     padding: 120px 50px;
     width: 100%;
     color:black;
     display: flex; flex-flow: column;
     align-items: center;
+    position: relative;
 }
 
 .post-component-title {
@@ -14,4 +17,14 @@
     border-bottom: solid 1px black;
     width: 60%;
     text-align: center;
+}
+
+.post-component-timestamp{
+    position: absolute;
+    bottom: 50px; right: 350px;
+}
+
+.post-component-body{
+    font-size: 30px;
+    font-family: 'Neuton', serif;
 }
