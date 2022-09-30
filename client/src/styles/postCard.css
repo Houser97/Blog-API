@@ -44,8 +44,15 @@
     background: linear-gradient(135deg, rgb(252, 207, 49) 10%, rgb(245, 85, 85) 100%);
     font-weight: 900;
     font-family: 'MonteCarlo', cursive;
+    cursor: pointer;
 }
 
 .Link-Router {
-    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    background: linear-gradient(135deg, rgb(252, 207, 49) 10%, rgb(245, 85, 85) 100%);
+    font-weight: 900;
+    font-family: 'MonteCarlo', cursive;
+    cursor: pointer;
 }

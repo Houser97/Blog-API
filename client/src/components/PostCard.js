@@ -14,15 +14,15 @@ const PostCard = ({title, timestamp}) => {
     }, [])
     
     return (
-    <Link to={`post/${formattedTitle}`} className = 'Link-Router'>
-        <div className='postCard'>
-            <div className='title-post-card item-card'>{title}</div>
-            <div className='timestamp-button'>
+    <div className='postCard'>
+        <div className='title-post-card item-card'>{title}</div>
+        <div className='timestamp-button'>
+            <Link to={`post/${formattedTitle}`} className = 'Link-Router'>
                 <button className='read'>Read</button>
-                <div className='timestamp-post-card item-card'>{formattedDate}</div>
-            </div>
+            </Link>
+            <div className='timestamp-post-card item-card'>{formattedDate}</div>
         </div>
-    </Link>
+    </div>
     )
 }
 
