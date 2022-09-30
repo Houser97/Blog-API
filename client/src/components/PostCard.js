@@ -17,7 +17,10 @@ const PostCard = ({title, timestamp}) => {
     <Link to={`post/${formattedTitle}`} className = 'Link-Router'>
         <div className='postCard'>
             <div className='title-post-card item-card'>{title}</div>
-            <div className='timestamp-post-card item-card'>{formattedDate}</div>
+            <div className='timestamp-button'>
+                <button className='read'>Read</button>
+                <div className='timestamp-post-card item-card'>{formattedDate}</div>
+            </div>
         </div>
     </Link>
     )

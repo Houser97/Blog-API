@@ -2,7 +2,7 @@
 
 .postCard {
     display: flex; flex-flow: column;
-    width: 250px; height: 300px;
+    width: 300px; height: 180px;
     justify-content: flex-start; align-items: center;
     background-color: #fffffe;
     color: #0a0a0a;
