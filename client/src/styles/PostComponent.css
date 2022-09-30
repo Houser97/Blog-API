@@ -8,6 +8,7 @@
     display: flex; flex-flow: column;
     align-items: center;
     position: relative;
+    background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
 .post-component-title {
