@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+
 .postCard {
     display: flex; flex-flow: column;
-    width: 280px; height: 250px;
-    border-radius: 10px;
-    justify-content: center; align-items: center;
-    background-color: rgb(235, 232, 232);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 250px; height: 300px;
+    padding-top: 20px;
+    justify-content: flex-start; align-items: center;
+    background-color: #fffffe;
+    color: #0a0a0a;
+    font-family: 'MonteCarlo', cursive;
+    font-size: 30px;
+    font-weight: 900;
 }
 
 .Link-Router {
