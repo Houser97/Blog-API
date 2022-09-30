@@ -7,7 +7,7 @@
     background-color: #fffffe;
     color: #0a0a0a;
     font-family: 'MonteCarlo', cursive;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 900;
     position: relative;
 }
@@ -33,6 +33,17 @@
     text-align: center;
     padding: 40px 0px;
     color: orange;
+}
+
+.read{
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: green;
+    padding: 0px 20px;
+    background: linear-gradient(135deg, rgb(252, 207, 49) 10%, rgb(245, 85, 85) 100%);
+    font-weight: 900;
+    font-family: 'MonteCarlo', cursive;
 }
 
 .Link-Router {
