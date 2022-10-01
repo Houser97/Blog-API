@@ -10,7 +10,7 @@ const Login = () => {
       <div className='form-login-wrapper'>
         <form className='form-login'>
           <div className='login-title'>
-            Login
+            Are you the owner? Then login to edit your posts!
           </div>
             <div className='username-section form-login-div'>
                 <label htmlFor='username' className='username-label label-login'>Username:</label>

@@ -8,6 +8,7 @@
 .form-login-wrapper{
     width: 100%;
     padding: 200px 50px;
+    padding-bottom: 100px;
     background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
     display: flex; 
     justify-content: center;
@@ -30,10 +31,13 @@
 
 .form-login input {
     outline: none;
-    padding: 5px 10px;
+    padding: 12px 15px;
     border-radius: 5px;
     width: 100%;
     border: none;
+    color: rgb(73, 73, 73);
+    font-family: 'Neuton', serif;
+    font-size: 24px;
 }
 
 .label-login{
@@ -47,5 +51,19 @@
     font-family: 'MonteCarlo', cursive;
     font-weight: 900;
     letter-spacing: 1px;
-    font-size: 56px;
+    font-size: 36px;
+}
+
+.login-button{
+    background: linear-gradient(135deg, rgb(255, 168, 168) 10%, rgb(252, 255, 0) 100%);
+    border: none;
+    cursor: pointer;
+    padding: 5px 0px;
+    border-radius: 10px;
+    width: 100px;
+    font-size: 26px;
+    font-family: 'MonteCarlo', cursive;
+    font-weight: 800;
+    margin-top: 20px;
+    letter-spacing: 2px;
 }
