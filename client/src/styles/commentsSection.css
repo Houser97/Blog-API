@@ -2,7 +2,7 @@
     display: flex; 
     flex-flow: column; align-items: center;
     background-color: green;
-    padding: 20px 50px;
+    padding: 50px 50px;
     width: 80%;
     background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
     margin-top: 50px;
@@ -19,6 +19,14 @@
     border: none;
     font-family: 'Neuton', serif;
     font-size: 22px;
+    resize: none;
+    min-width: 800px;
+    max-width: 800px;
+    min-height: 200px;
+    max-height: 200px;
+    padding: 25px 20px;
+    color: rgb(73, 73, 73);
+    border-radius: 10px;
 }
 
 .submit-comment{
