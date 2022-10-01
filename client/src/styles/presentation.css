@@ -11,13 +11,16 @@
     align-items: center;
     min-height: 100vh;
     font-family: 'Passion One', cursive;
-    padding: 0px 60px;
     color: white;
 }
 
 .bg-opacity{
-    position: absolute;
-    width: 100%; height: 100%;
+    width: 100%; min-height: 100vh;
+    padding: 0px 60px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.55);
     z-index: 1;
 }
