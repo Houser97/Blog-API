@@ -8,6 +8,10 @@ const CommentsSection = () => {
             <textarea className='textarea' placeholder='Write a comment'></textarea>
             <button className='submit-comment'>Submit</button>
         </form>
+
+        <div className='comments-area'>
+          Here goes comments
+        </div>
     </div>
   )
 }
