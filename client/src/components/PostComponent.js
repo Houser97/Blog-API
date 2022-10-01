@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/PostComponent.css'
 import moment from 'moment'
+import CommentsSection from './CommentsSection'
 
 const PostComponent = ({title, body, timestamp}) => {
 
@@ -18,6 +19,8 @@ const PostComponent = ({title, body, timestamp}) => {
         <div className='post-component-body'>{body}</div>
         <div className='post-component-timestamp'>{formattedTime}</div>
       </div>
+
+      <CommentsSection />
     </div>
   )
 }
