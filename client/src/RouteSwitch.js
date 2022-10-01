@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import App from './App'
-import Login from './components/Login'
+import Login from './Routes/Login'
 import Post from './Routes/Post'
 
 const RouteSwitch = () => {
