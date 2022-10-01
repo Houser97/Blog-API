@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+
+.login-section{
+    display: flex; flex-flow: column;
+    width: 100%;
+}
+
+.form-login-wrapper{
+    width: 100%;
+    padding: 200px 50px;
+    background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+    display: flex; 
+    justify-content: center;
+}
+
+.form-login{
+    display: flex; flex-flow: column;
+    align-items: center;
+    padding: 30px 30px;
+    border-radius: 10px;
+    width: 60%;
+    background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.form-login .form-login-div{
+    display: flex; flex-flow: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.form-login input {
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+}
+
+.label-login{
+    font-family: 'MonteCarlo', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 26px;
+}
+
+.login-title {
+    font-family: 'MonteCarlo', cursive;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 56px;
+}
