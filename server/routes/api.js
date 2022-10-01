@@ -16,9 +16,7 @@ router.post('/post/:title/create-comment', function(req, res, next){
 })
 
 // API de LOGIN para obtener el toke
-router.post('/login', function(req, res, next){
-    return res.json('login')
-})
+router.post('/login', apiController.api_login_token)
 
 // API para crear un nuevo POST (se usa JWT)
 router.post('/post/create-post', function(req, res, next){
