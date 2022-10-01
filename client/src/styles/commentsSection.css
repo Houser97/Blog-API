@@ -1,0 +1,33 @@
+.comments-section{
+    display: flex; 
+    flex-flow: column; align-items: center;
+    background-color: green;
+    padding: 20px 50px;
+    width: 80%;
+    background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.create-comment-form {
+    display: flex; flex-flow: column;
+    align-items: center;
+}
+
+.textarea{
+    outline: none;
+    border: none;
+    font-family: 'Neuton', serif;
+    font-size: 22px;
+}
+
+.submit-comment{
+    background: linear-gradient(135deg, rgb(255, 168, 168) 10%, rgb(252, 255, 0) 100%);
+    border: none;
+    cursor: pointer;
+    padding: 5px 0px;
+    border-radius: 10px;
+    width: 100px;
+    font-size: 20px;
+    font-family: 'Neuton', serif;
+}
