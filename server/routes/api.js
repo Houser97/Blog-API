@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
 
 const apiController = require('../controllers/apiControllers');
 
@@ -14,8 +15,13 @@ router.post('/post/:title/create-comment', function(req, res, next){
     return res.json('Create new comment');
 })
 
-// API para crear un nuevo POST
-router.post('/post/:title/create-post', function(req, res, next){
+// API de LOGIN para obtener el toke
+router.post('/login', function(req, res, next){
+    return res.json('login')
+})
+
+// API para crear un nuevo POST (se usa JWT)
+router.post('/post/create-post', function(req, res, next){
     return res.json('Create new post');
 })
 
