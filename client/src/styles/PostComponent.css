@@ -8,7 +8,18 @@
     display: flex; flex-flow: column;
     align-items: center;
     position: relative;
-    background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+}
+
+.post-component-article{
+    display: flex; flex-flow: column;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    width: 80%;
+    padding: 20px 50px;
+    border-radius: 20px;
+    background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
 }
 
 .post-component-title {
