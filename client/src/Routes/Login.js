@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import '../styles/Login.css'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [result, setResult] = useState('')
+
+  const navigate = useNavigate();
 
   const LoginApi = (e) => {
     e.preventDefault()
@@ -18,7 +20,8 @@ const Login = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({username, password})
-    }).then(response => response.json()).then(data => setResult(data))
+    }).then(response => response.json()).then(data => localStorage.setItem('token', JSON.stringify(data)))
+    .then(navigate('/'))
   }
   
   return (
@@ -42,7 +45,6 @@ const Login = () => {
             <button className='login-button'>Submit</button>
         </form>
       </div>
-      {result !== '' ? result.token : 'Oops'}
       <Footer />
     </div>
   )
