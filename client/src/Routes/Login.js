@@ -7,17 +7,18 @@ const Login = () => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [result, setResult] = useState('')
 
   const LoginApi = (e) => {
     e.preventDefault()
     if(!username || !password){return false}
     fetch('/api/login', {
-      method: 'Post',
-      header: {
-        'Content-type': 'application/json'
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({username, password})
-    })
+    }).then(response => response.json()).then(data => setResult(data))
   }
   
   return (
@@ -36,11 +37,12 @@ const Login = () => {
             <div className='pwd-section form-login-div'>
                 <label htmlFor='pwd' className='username-label label-login'>Password:</label>
                 <input type='password' className='input-username input-login' name='password' id='pwd'
-                onCanPlay={(e) => setPassword(e.target.value)}></input>
+                onChange={(e) => setPassword(e.target.value)}></input>
             </div>
             <button className='login-button'>Submit</button>
         </form>
       </div>
+      {result !== '' ? result.token : 'Oops'}
       <Footer />
     </div>
   )
