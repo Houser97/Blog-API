@@ -31,3 +31,17 @@
     font-weight: 800;
     letter-spacing: 2px;
 }
+
+.input-form-post{
+    outline: none;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 20px;
+    font-size: 26px;
+    font-family: 'Neuton';
+    width: 100%;
+}
+
+.input-form-post:focus{
+    border: 2px solid black;
+}
