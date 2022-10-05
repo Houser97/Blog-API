@@ -7,12 +7,14 @@ const CreatePost = () => {
   return (
     <section className='CreatePost-section'>
         <Navbar isInHome={false} />
-        <form method='POST' className='create-form-post'>
-          <div className='div-form-create form-post-title'>
-            <label htmlFor='title-post-form' className='label-form-create'>Title</label>
-            <input id='title-post-form' className='input-form-post' name='title-post'></input>
-          </div>
-        </form>
+        <div className='form-post-wrapper'>
+          <form method='POST' className='create-form-post'>
+            <div className='div-form-create form-post-title'>
+              <label htmlFor='title-post-form' className='label-form-create'>Title</label>
+              <input id='title-post-form' className='input-form-post' name='title-post'></input>
+            </div>
+          </form>
+        </div>
         <Footer />
     </section>
   )

@@ -1,0 +1,26 @@
+.CreatePost-section{
+    width: 100%;
+}
+
+.form-post-wrapper{
+    background-color: rgb(163, 163, 163);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 100px 40px; 
+}
+
+.create-form-post{
+    background-color: white;
+    border-radius: 10px;
+    display: flex; flex-flow: column;
+    align-items: center;
+    width: 70%;
+    padding: 10px 20px;
+}
+
+.div-form-create{
+    display: flex; flex-flow: column;
+    width: 100%;
+    align-items: center;
+}
