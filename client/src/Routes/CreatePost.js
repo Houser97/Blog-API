@@ -24,6 +24,7 @@ const CreatePost = () => {
               onEditorChange={newText => setBody(newText)}
               init={{
                 height: 500,
+                width: '100%',
                 menubar: false,
                 plugins: [
                   'advlist autolink lists link image charmap print preview anchor',
