@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import '../styles/CreatePost.css'
 import {Editor} from '@tinymce/tinymce-react'
 
 const CreatePost = () => {
+
+  const [title, setTitle] = useState('')
+  const [body, setBody] = useState('')
+
   return (
     <section className='CreatePost-section'>
         <Navbar isInHome={false} />
