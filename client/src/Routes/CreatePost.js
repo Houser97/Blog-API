@@ -22,6 +22,7 @@ const CreatePost = () => {
               textareaName='post-body'
               initialValue='Write post comment'
               onEditorChange={newText => setBody(newText)}
+              tinymceScriptSrc="/path/to/tinymce.min.js"
               init={{
                 height: 500,
                 menubar: false,
