@@ -80,7 +80,7 @@ exports.api_create_post = [
     },
 
     body('title', 'Title must not be empty').trim().isLength({max: 15}).escape(),
-    body('body', 'Body must not be empty').trim().isLength({min:5}).escape(),
+    body('body', 'Body must not be empty').trim().isLength({min:5}),
 
     (req, res, next) => {
         const errors = validationResult(req)

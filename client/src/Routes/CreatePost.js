@@ -18,7 +18,7 @@ const CreatePost = () => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token.token}`
       },
-      body: JSON.stringify({title, body})
+      body: JSON.stringify({title, body: body.toString()})
     }).then(response => response.json())
   }
 
