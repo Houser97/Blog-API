@@ -63,7 +63,7 @@ exports.api_token_verify = function(req, res, next){
         req.token = bearerToken;
         next()
     } else {
-        return res.sendStatus(403)
+        return res.json('forbidden')
     }
 }
 
@@ -72,7 +72,7 @@ exports.api_create_post = function(req, res, next){
     jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err, authData) => {
         if(err) return res.sendStatus(403)
         else {
-            res.json('Post Created!')
+            return res.json('Post Created!')
         }
     })
 }
