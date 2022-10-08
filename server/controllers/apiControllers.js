@@ -43,3 +43,24 @@ exports.api_login_token = function(req, res, next){
         }
     });
 }
+
+// Controlador para verificar Token.
+exports.api_token_verify = function(req, res, next){
+    // FORMAT
+    // Authorization : Bearer <access_token>
+
+    // Get auth header value
+    const bearerHeader = req.headers['authorization']
+
+    if(typeof bearerHeader !== 'undefined'){
+        // Separar usando el espacio.
+        const bearer = bearerHeader.split(' ')
+        // Obtener el token.
+        const bearerToken = bearer[1]
+        // Guardar TOKEN en req.
+        req.token = bearerToken;
+        next()
+    } else {
+        return res.sendStatus(403)
+    }
+}
