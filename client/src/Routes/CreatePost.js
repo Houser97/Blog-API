@@ -30,7 +30,7 @@ const CreatePost = () => {
             <div className='div-form-create form-post-title'>
               <label htmlFor='title-post-form' className='label-form-create'>Title</label>
               <input id='title-post-form' className='input-form-post' name='title-post'
-              onChange={(e) => setTitle(e.target.value)}></input>
+              onChange={(e) => setTitle(e.target.value)} required></input>
             </div>
             <Editor 
               textareaName='post-body'
