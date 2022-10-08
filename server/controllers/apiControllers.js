@@ -69,11 +69,34 @@ exports.api_token_verify = function(req, res, next){
 }
 
 // Controlador para crear POST
-exports.api_create_post = function(req, res, next){
-    jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err, authData) => {
-        if(err) return res.sendStatus(403)
-        else {
-            
+exports.api_create_post = [
+    (req, res, next) => {
+        jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err, authData) => {
+            if(err) return res.sendStatus(403)
+            else {
+                next()
+            }
+        })
+    },
+
+    body('title', 'Title must not be empty').trim().isLength({max: 15}).escape(),
+    body('body', 'Body must not be empty').trim().isLength({min:5}).escape(),
+
+    (req, res, next) => {
+        const errors = validationResult(req)
+        const post = new Post({
+            title: req.body.title,
+            body: req.body.body,
+            published: true,
+        });
+
+        if(!errors.isEmpty()){
+            return res.json('Something went wrong')
+        } else {
+            post.save(function(err){
+                if(err) return next(err);
+                res.json('Correct')
+            })
         }
-    })
-}
+    }
+]
