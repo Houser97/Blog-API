@@ -8,17 +8,16 @@ const CreatePost = () => {
 
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
+  const [token, setTody] = useState(JSON.parse(localStorage.getItem('token')))
   const [result, setResult] = useState('')
-
-  const Token = localStorage.getItem('token')
 
   const createPostAPI = (e) => {
     e.preventDefault()
-    fetch('api/post/create-post', {
+    fetch('/api/post/create-post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': Token
+        'Authorization': `Bearer ${token.token}`
       },
       body: JSON.stringify({title, body})
     }).then(response => response.json()).then(data => setResult(data))
@@ -28,7 +27,7 @@ const CreatePost = () => {
     <section className='CreatePost-section'>
         <Navbar isInHome={false} />
         <div className='form-post-wrapper'>
-          <form method='POST' className='create-form-post' onSubmit={() => createPostAPI()}>
+          <form method='POST' className='create-form-post' onSubmit={(e) => createPostAPI(e)}>
             <div className='div-form-create form-post-title'>
               <label htmlFor='title-post-form' className='label-form-create'>Title</label>
               <input id='title-post-form' className='input-form-post' name='title-post'
