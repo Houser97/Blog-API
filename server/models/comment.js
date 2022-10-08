@@ -4,7 +4,8 @@ const { DateTime } = require('luxon');
 
 const commentSchema = new Schema({
     username: {type: String, required: true},
-    timestamp: {type: Date, default: Date.now}
+    timestamp: {type: Date, default: Date.now},
+    post: {type: Schema.Types.ObjectId, ref: 'Post', required: true},
 });
 
 commentSchema.virtual('timestamp_formatted').get(function(){

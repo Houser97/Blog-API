@@ -3,6 +3,7 @@ const Comment = require('../models/comment');
 const User = require('../models/user');
 const async = require('async');
 const jwt  = require('jsonwebtoken');
+const {body, validationResult} = require('express-validator')
 
 // Controlador para buscar posts en base de datos.
 exports.fetch_posts = function(req, res, next){
