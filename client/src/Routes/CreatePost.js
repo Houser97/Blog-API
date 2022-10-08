@@ -8,7 +8,7 @@ const CreatePost = () => {
 
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
-  const [token, setToken] = useState(JSON.parse(localStorage.getItem('token'))) // Convierte objeto string en objeto.
+  const [token, setToken] = useState(JSON.parse(localStorage.getItem('token'))) // Convieret objeto string en objeto
 
   const createPostAPI = (e) => {
     e.preventDefault()
@@ -19,7 +19,7 @@ const CreatePost = () => {
         'Authorization': `Bearer ${token.token}`
       },
       body: JSON.stringify({title, body})
-    }).then(response => response.json()).then(data => setResult(data))
+    }).then(response => response.json())
   }
 
   return (
