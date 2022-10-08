@@ -8,9 +8,20 @@ const CreatePost = () => {
 
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
+  const [result, setResult] = useState('')
 
-  const createPostAPI = () => {
+  const Token = localStorage.getItem('token')
 
+  const createPostAPI = (e) => {
+    e.preventDefault()
+    fetch('api/post/create-post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': Token
+      },
+      body: JSON.stringify({title, body})
+    }).then(response => response.json()).then(data => setResult(data))
   }
 
   return (
@@ -46,7 +57,7 @@ const CreatePost = () => {
             <button className='post-submit-form'>Submit</button>
           </form>
         </div>
-        {body}
+        {result}
         <Footer />
     </section>
   )
