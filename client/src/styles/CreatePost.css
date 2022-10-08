@@ -45,3 +45,17 @@
 .input-form-post:focus{
     border: 2px solid black;
 }
+
+.post-submit-form{
+    background: linear-gradient(135deg, rgb(255, 168, 168) 10%, rgb(252, 255, 0) 100%);
+    border: none;
+    cursor: pointer;
+    padding: 5px 0px;
+    border-radius: 10px;
+    width: 100px;
+    font-size: 26px;
+    font-family: 'MonteCarlo', cursive;
+    font-weight: 800;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
