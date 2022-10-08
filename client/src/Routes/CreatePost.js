@@ -9,14 +9,19 @@ const CreatePost = () => {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
 
+  const createPostAPI = () => {
+
+  }
+
   return (
     <section className='CreatePost-section'>
         <Navbar isInHome={false} />
         <div className='form-post-wrapper'>
-          <form method='POST' className='create-form-post'>
+          <form method='POST' className='create-form-post' onSubmit={() => createPostAPI()}>
             <div className='div-form-create form-post-title'>
               <label htmlFor='title-post-form' className='label-form-create'>Title</label>
-              <input id='title-post-form' className='input-form-post' name='title-post'></input>
+              <input id='title-post-form' className='input-form-post' name='title-post'
+              onChange={(e) => setTitle(e.target.value)}></input>
             </div>
             <Editor 
               textareaName='post-body'
