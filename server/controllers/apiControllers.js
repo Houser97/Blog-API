@@ -29,6 +29,8 @@ exports.fetch_post_and_comments = function(req, res, next){
     })
 }
 
+// JWT
+
 // Controlador para autenticación y obtener Token
 exports.api_login_token = function(req, res, next){
     User.find({'username': req.body.username}).exec(function(err, user){
@@ -63,4 +65,14 @@ exports.api_token_verify = function(req, res, next){
     } else {
         return res.sendStatus(403)
     }
+}
+
+// Controlador para crear POST
+exports.api_create_post = function(req, res, next){
+    jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err, authData) => {
+        if(err) return res.sendStatus(403)
+        else {
+            res.json('Post Created!')
+        }
+    })
 }

@@ -19,7 +19,7 @@ router.post('/post/:title/create-comment', function(req, res, next){
 router.post('/login', apiController.api_login_token)
 
 // API para crear un nuevo POST (se usa JWT)
-router.post('/post/create-post', function(req, res, next){
+router.post('/post/create-post', apiController.api_token_verify ,function(req, res, next){
     return res.json('Create new post');
 })
 
