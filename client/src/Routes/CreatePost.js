@@ -8,8 +8,7 @@ const CreatePost = () => {
 
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
-  const [token, setTody] = useState(JSON.parse(localStorage.getItem('token')))
-  const [result, setResult] = useState('')
+  const [token, setToken] = useState(JSON.parse(localStorage.getItem('token'))) // Convierte objeto string en objeto.
 
   const createPostAPI = (e) => {
     e.preventDefault()
