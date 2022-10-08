@@ -55,7 +55,6 @@ const CreatePost = () => {
             <button className='post-submit-form'>Submit</button>
           </form>
         </div>
-        {result}
         <Footer />
     </section>
   )
