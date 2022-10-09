@@ -42,6 +42,24 @@
     background: linear-gradient(to left, #EA832A, #FFA201);
 }
 
+.create-link{
+    margin-left: 50px;
+    font-family: 'MonteCarlo', cursive;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 0px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    /* Created with https://www.css-gradient.com */
+    background: #2AEADB;
+    background: -webkit-linear-gradient(right, #2AEADB, #49DA1F);
+    background: -moz-linear-gradient(right, #2AEADB, #49DA1F);
+    background: linear-gradient(to left, #2AEADB, #49DA1F);
+}
+
 .a-links .first-navbar-link{
     margin-right: 50px;
 }

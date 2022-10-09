@@ -19,7 +19,7 @@ const Navbar = ({isInHome}) => {
                 <a href = '#posts' className={`link-navbar ${activeLink === 'Posts' ? 'activeLink' : ''}`} 
                 onClick={() => setActiveLink('Posts')}>Posts</a>
 
-                {isToken ? (<div>Logged in</div>):(
+                {isToken ? ( <a href='/create-post' className='create-link'>Create</a>):(
                     <a href='/login' className='sign-in'>Log in</a>
                 )}
             </div>
