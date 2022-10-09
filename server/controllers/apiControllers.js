@@ -104,7 +104,7 @@ exports.api_create_post = [
 // Controlador para saber si el TOKEN es válido y renderizar condicionalmente en cliente.
 exports.api_is_logged_in = function(req, res, next){
     jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err, authData) => {
-        if(err) return false
-        return true
+        if(err) return res.json(false)
+        return res.json(true)
     })
 }
