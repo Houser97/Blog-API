@@ -36,13 +36,13 @@ exports.fetch_post_and_comments = function(req, res, next){
 exports.api_login_token = function(req, res, next){
     User.find({'username': req.body.username}).exec(function(err, user){
         if(err) return next(err)
-        if(user.password = req.body.password){
+        if(user[0].password === req.body.password){
             jwt.sign({user}, `${process.env.SECRET_KEY}`, {expiresIn: '1h'} ,(err, token) => {
                 if(err) return next(err)
                 return res.json({token})
             })
         } else {
-            return res.json('Username or password incorrect')
+            return res.json(false)
         }
     });
 }
