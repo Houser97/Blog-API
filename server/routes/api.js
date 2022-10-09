@@ -21,4 +21,7 @@ router.post('/login', apiController.api_login_token)
 // API para crear un nuevo POST (se usa JWT)
 router.post('/post/create-post', apiController.api_token_verify , apiController.api_create_post)
 
+//API para preguntar si hay usuario en sesión
+router.get('/check-token', apiController.api_token_verify, apiController.api_is_logged_in);
+
 module.exports = router;

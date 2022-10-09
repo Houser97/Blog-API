@@ -37,7 +37,7 @@ exports.api_login_token = function(req, res, next){
     User.find({'username': req.body.username}).exec(function(err, user){
         if(err) return next(err)
         if(user.password = req.body.password){
-            jwt.sign({user}, `${process.env.SECRET_KEY}`, (err, token) => {
+            jwt.sign({user}, `${process.env.SECRET_KEY}`, {expiresIn: '1h'} ,(err, token) => {
                 if(err) return next(err)
                 return res.json({token})
             })
@@ -47,7 +47,7 @@ exports.api_login_token = function(req, res, next){
     });
 }
 
-// Controlador para verificar Token.
+// Controlador para extraer Token.
 exports.api_token_verify = function(req, res, next){
     // FORMAT
     // Authorization : Bearer <access_token>
@@ -100,3 +100,11 @@ exports.api_create_post = [
         }
     }
 ]
+
+// Controlador para saber si el TOKEN es válido y renderizar condicionalmente en cliente.
+exports.api_is_logged_in = function(req, res, next){
+    jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err, authData) => {
+        if(err) return false
+        return true
+    })
+}
