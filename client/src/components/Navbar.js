@@ -16,6 +16,8 @@ const Navbar = ({isInHome}) => {
 
                 <a href = '#posts' className={`link-navbar ${activeLink === 'Posts' ? 'activeLink' : ''}`} 
                 onClick={() => setActiveLink('Posts')}>Posts</a>
+
+                <a href='/login' className='sign-in'>Sign in</a>
             </div>
         ) : (
             <div className='navbar-item a-links'>

@@ -20,6 +20,26 @@
 .navbar .a-links{
     color: rgba(255, 255, 255, 0.749);
     font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.sign-in{
+    margin-left: 50px;
+    font-family: 'MonteCarlo', cursive;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 0px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    /* Created with https://www.css-gradient.com */
+    background: #EA832A;
+    background: -webkit-linear-gradient(right, #EA832A, #FFA201);
+    background: -moz-linear-gradient(right, #EA832A, #FFA201);
+    background: linear-gradient(to left, #EA832A, #FFA201);
 }
 
 .a-links .first-navbar-link{

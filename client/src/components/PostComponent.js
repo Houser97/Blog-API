@@ -10,7 +10,7 @@ const PostComponent = ({title, body, timestamp}) => {
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
 
   useEffect(() => {
-    setFormattedTime(moment(timestamp).format('MMMM Do yyyy'))
+    setFormattedTime(moment(timestamp).format('MMMM Do yyyy HH:ss'))
   }, [])
 
   return (
