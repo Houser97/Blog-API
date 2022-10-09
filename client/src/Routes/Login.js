@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../styles/Login.css'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { useNavigate } from 'react-router-dom'
+import { isTokenContext } from '../RouteSwitch'
 
 const Login = () => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+
+  const [isToken,setIsToken] = useContext(isTokenContext)
 
   const navigate = useNavigate();
 
@@ -20,8 +23,15 @@ const Login = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({username, password})
-    }).then(response => response.json()).then(data => localStorage.setItem('token', JSON.stringify(data)))
-    .then(navigate('/'))
+    }).then(response => response.json()).then(data => {
+      if(data){
+        setIsToken(data)
+        localStorage.setItem('token', JSON.stringify(data))
+        navigate('/')
+      } else {
+        setIsToken(data)
+      }
+    })
   }
   
   return (

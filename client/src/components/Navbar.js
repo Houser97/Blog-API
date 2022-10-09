@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../styles/navbar.css'
+import { isTokenContext } from '../RouteSwitch'
 
 const Navbar = ({isInHome}) => {
 
     const [activeLink, setActiveLink] = useState('')
+    const [isToken] = useContext(isTokenContext)
 
     return (
     <nav className='navbar'>
@@ -17,7 +19,9 @@ const Navbar = ({isInHome}) => {
                 <a href = '#posts' className={`link-navbar ${activeLink === 'Posts' ? 'activeLink' : ''}`} 
                 onClick={() => setActiveLink('Posts')}>Posts</a>
 
-                <a href='/login' className='sign-in'>Sign in</a>
+                {isToken ? (<div>Logged in</div>):(
+                    <a href='/login' className='sign-in'>Log in</a>
+                )}
             </div>
         ) : (
             <div className='navbar-item a-links'>
