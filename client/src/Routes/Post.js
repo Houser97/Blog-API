@@ -13,7 +13,7 @@ const Post = () => {
   useEffect(() => {
     fetch(`/api/post/${title}`).
       then(response => response.json()).
-      then(data => setBackendTitle(data)).then(console.log(backendPost.post)).catch(() => setBackendTitle('error'))
+      then(data => setBackendTitle(data)).catch(() => setBackendTitle('error'))
   }, [])
 
   return (
