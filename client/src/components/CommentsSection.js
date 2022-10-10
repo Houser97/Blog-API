@@ -23,6 +23,10 @@ const CommentsSection = ({idPost}) => {
   return (
     <div className='comments-section'>
         <form className='create-comment-form' onSubmit={(e) => createCommentAPI(e)}>
+            <div className='comment-form-div'>
+              <label htmlFor='username-comment' className='username-comment-label comment-item'>Username:</label>
+              <input id='username-comment' className='input-comment comment-item'></input>
+            </div>
             <textarea className='textarea' placeholder='Write a comment'
             onChange={(e) => setComment(e.target.value)}></textarea>
             <input type='hidden' value={idPost} name = 'idPost'></input>

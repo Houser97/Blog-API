@@ -54,3 +54,27 @@
     flex-flow: column;
     align-items: center;
 }
+
+.comment-form-div{
+    width: 100%;
+    display: flex; 
+    flex-flow: column;
+    padding: 10px 0px;
+}
+
+.input-comment{
+    outline: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-family: 'Neuton', serif;
+    font-size: 22px;
+    color: rgb(73, 73, 73);
+    border-radius: 10px;
+    border: none;
+}
+
+.username-comment-label{
+    font-size: 26px;
+    font-family: 'MonteCarlo', cursive;
+    font-weight: 800;
+}
