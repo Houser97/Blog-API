@@ -22,7 +22,9 @@ exports.fetch_post_and_comments = function(req, res, next){
             Post.find({'title': {$eq: title}}).exec(callback);
         },
         comments(callback){
-            Comment.find().exec(callback);
+            let title = req.params.title;
+            title = title.replace(/-/g, ' ');
+            Comment.find({'post': {$eq: title}}).exec(callback);
         },
     }, function(err, results){
         if(err) return next(err);
