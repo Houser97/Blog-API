@@ -12,6 +12,7 @@
 .create-comment-form {
     display: flex; flex-flow: column;
     align-items: center;
+    width: 100%;
 }
 
 .textarea{
@@ -20,8 +21,8 @@
     font-family: 'Neuton', serif;
     font-size: 22px;
     resize: none;
-    min-width: 800px;
-    max-width: 800px;
+    min-width: 100%;
+    max-width: 100%;
     min-height: 200px;
     max-height: 200px;
     padding: 25px 20px;
