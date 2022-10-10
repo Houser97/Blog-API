@@ -121,7 +121,7 @@ exports.api_create_comment = [
         const comment = new Comment({
             username: req.body.username,
             comment: req.body.comment,
-            post: req.body.idPost,
+            post: req.body.title,
         })
 
         if(!errors.isEmpty()){
