@@ -108,3 +108,25 @@ exports.api_is_logged_in = function(req, res, next){
         return res.json(true)
     })
 }
+
+// Controlador para crear comentario
+exports.api_create_comment = [
+    body('comment', 'Comment should not be empty').trim().isLength({min: 5}).escape(),
+
+    (req, res, next) => {
+        const errors = validationResult(req);
+        const comment = new Comment({
+            username: req.body.username,
+            post: req.body.idPost,
+        })
+
+        if(!errors.isEmpty()){
+            return false
+        } else {
+            comment.save(function(err){
+                if(err) return next(err);
+                res.json('Comment created')
+            })
+        }
+    }
+]
