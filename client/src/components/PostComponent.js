@@ -4,7 +4,7 @@ import moment from 'moment'
 import CommentsSection from './CommentsSection'
 import HTMLReactParser from 'html-react-parser'
 
-const PostComponent = ({_id,title, body, timestamp}) => {
+const PostComponent = ({title, body, timestamp}) => {
 
   const [formattedTime, setFormattedTime] = useState(timestamp)
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
@@ -21,7 +21,7 @@ const PostComponent = ({_id,title, body, timestamp}) => {
         <div className='post-component-timestamp'>{formattedTime}</div>
       </div>
 
-      <CommentsSection idPost={_id}/>
+      <CommentsSection title = {title}/>
     </div>
   )
 }

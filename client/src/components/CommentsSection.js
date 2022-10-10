@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/commentsSection.css'
 
-const CommentsSection = ({idPost}) => {
+const CommentsSection = ({title}) => {
 
   const [comment, setComment] = useState('')
   const [username, setUsername] = useState('')
-
-  useEffect(() =>{
-    console.log(idPost)
-  })
 
   const createCommentAPI = (e) => {
     e.preventDefault()
@@ -18,7 +14,7 @@ const CommentsSection = ({idPost}) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({username, comment, idPost})
+      body: JSON.stringify({username, comment, title})
     })
   }
 
