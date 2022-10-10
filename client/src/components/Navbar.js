@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import '../styles/navbar.css'
 import { isTokenContext } from '../RouteSwitch'
 
-const Navbar = ({isInHome}) => {
+const Navbar = ({isInHome, isInLogIn}) => {
 
     const [activeLink, setActiveLink] = useState('')
     const [isToken] = useContext(isTokenContext)
@@ -24,9 +24,15 @@ const Navbar = ({isInHome}) => {
                 )}
             </div>
         ) : (
-            <div className='navbar-item a-links'>
-                <a href = '/' className={`link-navbar first-navbar-link`}>Home</a>
-            </div>
+            isInLogIn ? (
+                <div className='navbar-item a-links'>
+                    <a href = '/' className={`link-navbar first-navbar-link`}>Home</a>
+                </div>
+            ):(
+                isToken ? ( <a href='/create-post' className='create-link'>Create</a>):(
+                    <a href='/login' className='sign-in'>Log in</a>
+                )
+            )
         )}
     </nav>
     )

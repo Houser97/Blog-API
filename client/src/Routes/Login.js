@@ -36,7 +36,7 @@ const Login = () => {
   
   return (
     <div className='login-section'>
-      <Navbar />
+      <Navbar isInLogIn={true} />
       <div className='form-login-wrapper'>
         <form method='POST' className='form-login' onSubmit={(e) => LoginApi(e)}>
           <div className='login-title'>
