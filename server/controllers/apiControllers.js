@@ -37,7 +37,7 @@ exports.api_login_token = function(req, res, next){
     User.find({'username': req.body.username}).exec(function(err, user){
         if(err) return next(err)
         if(user[0].password === req.body.password){
-            jwt.sign({user}, `${process.env.SECRET_KEY}`, {expiresIn: '1h'} ,(err, token) => {
+            jwt.sign({user}, `${process.env.SECRET_KEY}`, {expiresIn: '6h'} ,(err, token) => {
                 if(err) return next(err)
                 return res.json({token})
             })
