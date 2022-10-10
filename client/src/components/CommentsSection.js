@@ -9,9 +9,20 @@ const CommentsSection = ({idPost}) => {
     console.log(idPost)
   })
 
+  const createCommentAPI = (e) => {
+    e.preventDefault()
+    fetch('/api/post/create-comment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({comment})
+    })
+  }
+
   return (
     <div className='comments-section'>
-        <form className='create-comment-form'>
+        <form className='create-comment-form' onSubmit={(e) => createCommentAPI(e)}>
             <textarea className='textarea' placeholder='Write a comment'
             onChange={(e) => setComment(e.target.value)}></textarea>
             <input type='hidden' value={idPost} name = 'idPost'></input>
