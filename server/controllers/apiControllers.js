@@ -111,12 +111,14 @@ exports.api_is_logged_in = function(req, res, next){
 
 // Controlador para crear comentario
 exports.api_create_comment = [
+    body('username', 'Username should not be empty').trim().isLength({min: 3}).escape(),
     body('comment', 'Comment should not be empty').trim().isLength({min: 5}).escape(),
 
     (req, res, next) => {
         const errors = validationResult(req);
         const comment = new Comment({
             username: req.body.username,
+            comment: req.body.comment,
             post: req.body.idPost,
         })
 
