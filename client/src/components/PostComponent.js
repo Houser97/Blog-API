@@ -4,7 +4,9 @@ import moment from 'moment'
 import CommentsSection from './CommentsSection'
 import HTMLReactParser from 'html-react-parser'
 
-const PostComponent = ({title, body, timestamp}) => {
+const PostComponent = ({PostAndComments}) => {
+
+  const {title, body, timestamp} = PostAndComments.post[0]
 
   const [formattedTime, setFormattedTime] = useState(timestamp)
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
