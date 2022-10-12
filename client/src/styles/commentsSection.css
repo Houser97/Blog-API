@@ -78,3 +78,7 @@
     font-family: 'MonteCarlo', cursive;
     font-weight: 800;
 }
+
+.comments-area {
+    width: 100%;
+}
