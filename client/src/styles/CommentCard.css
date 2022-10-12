@@ -1,6 +1,15 @@
 .comment-card {
-    display: flex; flex-flow: column;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
     width: 100%;
     background-color: green;
     position: relative;
+    border-radius: 10px;
+}
+
+.username-comment-div{
+    display: flex;
+    justify-content: center; align-items: center;
+    text-align: center;
+    width: 100%;
 }
