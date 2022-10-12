@@ -14,8 +14,8 @@ const PostComponent = ({PostAndComments}) => {
 
   useEffect(() => {
     setFormattedTime(moment(timestamp).format('MMMM Do yyyy HH:ss'))
-    if(typeof PostAndComments.comments !== 'undefined'){
-      setComments(() => [...PostAndComments.comments])
+    if(PostAndComments.comments.length){
+      if(PostAndComments.comments.length > 0) setComments(() => [...PostAndComments.comments])
     } 
   }, [])
 

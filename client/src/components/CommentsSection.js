@@ -38,7 +38,7 @@ const CommentsSection = ({title, commentInfo}) => {
         </form>
 
         <div className='comments-area'>
-          {commentInfo.length > 0 ? (
+          {commentInfo !== null ? (
             commentInfo.map(function(index,comment){
               return(
                 <CommentCard key={`comment-${index}`}></CommentCard>
