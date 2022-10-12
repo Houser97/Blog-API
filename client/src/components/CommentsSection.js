@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/commentsSection.css'
+import CommentCard from './CommentCard'
 
-const CommentsSection = ({title}) => {
+const CommentsSection = ({title, commentInfo}) => {
 
-  const [comment, setComment] = useState('')
   const [username, setUsername] = useState('')
+  const [comment, setComment] = useState('')
+
+  useEffect(() => {
+    console.log(commentInfo)
+  })
 
   const createCommentAPI = (e) => {
     e.preventDefault()
@@ -33,7 +38,15 @@ const CommentsSection = ({title}) => {
         </form>
 
         <div className='comments-area'>
-          Here goes comments
+          {commentInfo.length > 0 ? (
+            commentInfo.map(function(index,comment){
+              return(
+                <CommentCard key={`comment-${index}`}></CommentCard>
+              )
+            })
+          ):(<div>
+            There are no comments for this Post
+          </div>)}
         </div>
     </div>
   )

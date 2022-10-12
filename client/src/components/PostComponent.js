@@ -7,12 +7,16 @@ import HTMLReactParser from 'html-react-parser'
 const PostComponent = ({PostAndComments}) => {
 
   const {title, body, timestamp} = PostAndComments.post[0]
+  const [comments, setComments] = useState(null)
 
   const [formattedTime, setFormattedTime] = useState(timestamp)
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
 
   useEffect(() => {
     setFormattedTime(moment(timestamp).format('MMMM Do yyyy HH:ss'))
+    if(typeof PostAndComments.comments !== 'undefined'){
+      setComments(() => [...PostAndComments.comments])
+    } 
   }, [])
 
   return (
@@ -23,7 +27,7 @@ const PostComponent = ({PostAndComments}) => {
         <div className='post-component-timestamp'>{formattedTime}</div>
       </div>
 
-      <CommentsSection title = {title}/>
+      <CommentsSection title = {title} commentInfo = {comments}/>
     </div>
   )
 }
