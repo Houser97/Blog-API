@@ -6,10 +6,11 @@ const CommentsSection = ({title, commentInfo}) => {
 
   const [username, setUsername] = useState('')
   const [comment, setComment] = useState('')
+  const [commentData, setCommentData] = useState(null)
 
   useEffect(() => {
-    console.log(commentInfo)
-  })
+    if(commentInfo !== null) setCommentData([...commentInfo])
+  }, [])
 
   const createCommentAPI = (e) => {
     e.preventDefault()
@@ -38,10 +39,10 @@ const CommentsSection = ({title, commentInfo}) => {
         </form>
 
         <div className='comments-area'>
-          {commentInfo !== null ? (
-            commentInfo.map(function(index,comment){
+          {commentData !== null ? (
+            commentData.map(function(comment,index){
               return(
-                <CommentCard key={`comment-${index}`}></CommentCard>
+                <CommentCard key={`comment-${index}`} data = {comment}></CommentCard>
               )
             })
           ):(<div>
