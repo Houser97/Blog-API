@@ -1,0 +1,6 @@
+.comment-card {
+    display: flex; flex-flow: column;
+    width: 100%;
+    background-color: green;
+    position: relative;
+}
