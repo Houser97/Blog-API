@@ -5,7 +5,7 @@
     background-color: #b2ec5d;
     position: relative;
     border-radius: 10px;
-    padding: 20px 0px;
+    padding: 20px 10px;
 }
 
 .username-comment-div{
@@ -24,4 +24,9 @@
     font-family: 'MonteCarlo', cursive;
     font-weight: 800;
     letter-spacing: 1px;
+}
+
+.timestamp-comment-div{
+    position: absolute;
+    bottom: 3px; right: 15px;
 }

@@ -10,8 +10,8 @@ const CommentCard = ({data}) => {
     <div className='comment-card'>
         <div className='username-comment-div'>{username}</div>
         <div className='time-comment-divs'>
-            <div className='timestamp-comment-div comment-div'>{comment}</div>
-            <div className='comment-comment-div comment-div'>{formattedTime}</div>
+            <div className='comment-comment-div comment-div'>{comment}</div>
+            <div className='timestamp-comment-div comment-div'>{formattedTime}</div>
         </div>
     </div>
   )
