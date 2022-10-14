@@ -2,11 +2,10 @@
     display: grid;
     grid-template-columns: 0.5fr 1fr;
     width: 100%;
-    background-color: #b2ec5d;
+    background-color: #ffe5b4;
     position: relative;
     border-radius: 10px;
     padding: 20px 10px;
-    padding-bottom: 60px; /*Previene que timestamp choce con comentario*/
     margin-bottom: 40px;
 }
 
@@ -36,6 +35,9 @@
 .comment-comment-div{
     text-align: justify;
     display: flex; align-items: center;
-    background-color: green;
+    justify-content: center;
     height: 100%;
+    padding-left: 10px;
+    font-size: 24px;
+    padding-bottom: 60px; /*Previene que timestamp choce con comentario*/
 }
