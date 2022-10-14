@@ -49,7 +49,7 @@ const CommentsSection = ({title, commentInfo}) => {
                 <CommentCard key={`comment-${index}`} data = {comment}></CommentCard>
               )
             })
-          ):(<div className='no-comments-div'>
+          ):(<div className='no-comments'>
             There are no comments for this Post
           </div>)}
         </div>
