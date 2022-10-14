@@ -5,8 +5,8 @@ import CommentCard from './CommentCard'
 const CommentsSection = ({title, commentInfo}) => {
 
   const [username, setUsername] = useState('')
-  const [comment, setComment] = useState('')
-  const [commentData, setCommentData] = useState(null)
+  const [comment, setComment] = useState('') // Estado que guarda comentario creado por el formulario.
+  const [commentData, setCommentData] = useState(null) // Estado que guarda arreglo con los comentarios de este Post.
 
   useEffect(() => {
     if(commentInfo !== null) setCommentData([...commentInfo])
@@ -45,7 +45,7 @@ const CommentsSection = ({title, commentInfo}) => {
                 <CommentCard key={`comment-${index}`} data = {comment}></CommentCard>
               )
             })
-          ):(<div>
+          ):(<div className='no-comments'>
             There are no comments for this Post
           </div>)}
         </div>
