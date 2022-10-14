@@ -6,6 +6,8 @@
     position: relative;
     border-radius: 10px;
     padding: 20px 10px;
+    padding-bottom: 60px; /*Previene que timestamp choce con comentario*/
+    margin-bottom: 40px;
 }
 
 .username-comment-div{
@@ -29,4 +31,11 @@
 .timestamp-comment-div{
     position: absolute;
     bottom: 3px; right: 15px;
+}
+
+.comment-comment-div{
+    text-align: justify;
+    display: flex; align-items: center;
+    background-color: green;
+    height: 100%;
 }
