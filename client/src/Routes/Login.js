@@ -10,7 +10,7 @@ const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const [isToken,setIsToken] = useContext(isTokenContext)
+  const [ ,setIsToken] = useContext(isTokenContext)
 
   const navigate = useNavigate();
 
