@@ -68,6 +68,12 @@
     right: 0px;
     z-index: 1;
     padding: 5px 6px;
+    transition: opacity 250ms ease-in-out;
+    opacity: 0;
+}
+
+.postCard:hover > .container-edit-delete {
+    opacity: 1;
 }
 
 .svg-edit-delete{
