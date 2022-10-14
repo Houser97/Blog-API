@@ -4,18 +4,18 @@ import moment from 'moment'
 import CommentsSection from './CommentsSection'
 import HTMLReactParser from 'html-react-parser'
 
-const PostComponent = ({PostAndComments}) => {
+const PostComponent = ({post, comments}) => {
 
-  const {title, body, timestamp} = PostAndComments.post[0]
-  const [comments, setComments] = useState(null)
+  const {title, body, timestamp} = post[0]
+  const [commentsState, setCommentsState] = useState(null)
 
   const [formattedTime, setFormattedTime] = useState(timestamp)
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
 
   useEffect(() => {
     setFormattedTime(moment(timestamp).format('MMMM Do yyyy HH:ss'))
-    if(PostAndComments.comments.length){
-      if(PostAndComments.comments.length > 0) setComments(() => [...PostAndComments.comments])
+    if(comments.length){
+      if(comments.length > 0) setCommentsState(() => [...comments])
     } 
   }, [])
 
