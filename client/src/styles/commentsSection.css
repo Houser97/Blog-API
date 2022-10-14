@@ -82,3 +82,8 @@
 .comments-area {
     width: 100%;
 }
+
+.no-comments {
+    width: 100%;
+    color: black;
+}

@@ -9,7 +9,11 @@ const CommentsSection = ({title, commentInfo}) => {
   const [commentData, setCommentData] = useState(null) // Estado que guarda arreglo con los comentarios de este Post.
 
   useEffect(() => {
-    if(commentInfo !== null) setCommentData([...commentInfo])
+    if(commentInfo !== null && commentInfo.length > 0) setCommentData([...commentInfo])
+
+    return () => {
+      setCommentData(() => null)
+    }
   }, [])
 
   const createCommentAPI = (e) => {
@@ -45,7 +49,7 @@ const CommentsSection = ({title, commentInfo}) => {
                 <CommentCard key={`comment-${index}`} data = {comment}></CommentCard>
               )
             })
-          ):(<div className='no-comments'>
+          ):(<div className='no-comments-div'>
             There are no comments for this Post
           </div>)}
         </div>

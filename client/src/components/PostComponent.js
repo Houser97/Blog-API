@@ -17,6 +17,10 @@ const PostComponent = ({post, comments}) => {
     if(comments.length){
       if(comments.length > 0) setCommentsState(() => [...comments])
     } 
+
+    return () => {
+      setCommentsState(() => null)
+    }
   }, [])
 
   return (
