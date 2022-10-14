@@ -58,3 +58,12 @@
     font-family: 'MonteCarlo', cursive;
     cursor: pointer;
 }
+
+.container-edit-delete{
+    position: absolute;
+    display: flex; 
+    background-color: white;
+    border-radius: 5px;
+    top: -20px;
+    right: 0px;
+}
