@@ -7,6 +7,7 @@
 
 .post-edit {
     display: flex; flex-flow: column;
+    align-items: center;
     background-color: rgb(227, 227, 227);
     width: 100%;
     border-radius: 10px;
@@ -17,6 +18,22 @@
     display: flex; flex-flow: column;
     color: #0a0a0a;
     font-family: 'MonteCarlo', cursive;
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 900;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.input-edit{
+    outline: none;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 20px;
+    font-size: 26px;
+    font-family: 'Neuton';
+    width: 100%;
+}
+
+.input-edit:focus{
+    border: 4px solid black;
 }
