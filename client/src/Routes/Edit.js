@@ -9,6 +9,8 @@ const Edit = () => {
 
     const [post, setPost] = useState(null)
     const [titleEdited, setTitleEdited] = useState(null)
+    const [timestamp, setTimeStamp] = useState(null)
+    const [ID, setID] = useState(null)
     const [bodyEdited, setBodyEdited] = useState(null)
     /*const [bodyFormatted, setBodyFormatted] = useState('')*/
     const {title} = useParams()
@@ -16,7 +18,11 @@ const Edit = () => {
     useEffect(() => {
         fetch(`/api/post/edit/${title}`)
         .then(response => response.json())
-        .then(data => setPost(() => data[0]))
+        .then(data => {
+            setPost(() => data[0])
+            setTimeStamp(() => data[0].timestamp);
+            setID(() => data[0]._id)
+        })
     }, [])
 
     /*
@@ -36,7 +42,7 @@ const Edit = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({titleEdited, bodyEdited})
+            body: JSON.stringify({titleEdited, bodyEdited, timestamp, ID})
         })
     }
 
