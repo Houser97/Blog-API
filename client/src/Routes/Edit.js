@@ -37,13 +37,16 @@ const Edit = () => {
 
     const UpdatePostAPI = (e) => {
         e.preventDefault();
+        const token = JSON.parse(localStorage.getItem('token'));
         fetch('/api/edit/post', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token.token}` 
             },
             body: JSON.stringify({titleEdited, bodyEdited, timestamp, ID})
-        })
+        }).then(response => response.json())
+        .then(data => console.log(data))
     }
 
 
