@@ -29,6 +29,17 @@ const Edit = () => {
         }
     },[post])*/
 
+    const UpdatePostAPI = (e) => {
+        e.preventDefault();
+        fetch('/api/edit/post', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({titleEdited, bodyEdited})
+        })
+    }
+
 
   return (
     <div className='Edit-page'>
@@ -40,7 +51,7 @@ const Edit = () => {
                 <div className='no-post-edit'>This post does not exist</div>
             ):(
                 <div className='div-container-form-edit'>
-                    <form method='POST' className='post-edit'>
+                    <form method='POST' className='post-edit' onSubmit={(e) => UpdatePostAPI(e)}>
                         <div className='form-div-edit'>
                             <label htmlFor='title-edit'>Title:</label>
                             <input className='input-edit' id='title-edit' defaultValue={post.title}
