@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { isTokenContext } from '../RouteSwitch';
 
 
-const PostCard = ({title, timestamp}) => {
+const PostCard = ({title, timestamp, _id}) => {
 
     const [formattedDate, setFormattedDate] = useState('');
     const [formattedTitle, setFormattedTitle] = useState('');
@@ -15,6 +15,12 @@ const PostCard = ({title, timestamp}) => {
         setFormattedDate(moment(timestamp).format('MMM Do yyyy'))
         setFormattedTitle(title.replace(/\s/g, '-'))
     }, [])
+
+    const DeletePostAPI = () => {
+        fetch(`/api/delete/post/${_id}`)
+        .then(response => response.json())
+        .then(data => console.log(data))
+    }
     
     return (
     <div className='postCard'>
