@@ -121,7 +121,6 @@ exports.api_is_logged_in = function(req, res, next){
     })
 }
 
-
 // Controlador para actualizar POSTS
 exports.api_update_post = [
     (req, res, next) => {
@@ -153,6 +152,23 @@ exports.api_update_post = [
         }
     }
     
+]
+
+// Controlador para eliminar Posts
+exports.api_delete_post = [
+    (req, res, next) => {
+        jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err) => {
+            if(err) return res.json('Token is not valid');
+            next();
+        });
+    },
+
+    (req, res, next) => {
+        Post.findByIdAndRemove(req.params.id, (err) => {
+            if(err) return res.json('Post could not be removed');
+            return res.json('Removed')
+        })
+    }
 ]
 
 // Controlador para crear comentario
