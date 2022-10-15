@@ -18,7 +18,6 @@ const PostCard = ({title, timestamp, _id}) => {
     }, [])
 
     const DeletePostAPI = (e) => {
-        e.preventDefault();
         const token = JSON.parse(localStorage.getItem('token'));
         fetch(`/api/delete/post/${_id}`, {
             method: 'POST',
@@ -28,7 +27,9 @@ const PostCard = ({title, timestamp, _id}) => {
             }
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data !== 'Removed') e.preventDefault();
+        })
     }
     
     const handleDeleteMsg = () => {
