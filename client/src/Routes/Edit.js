@@ -20,9 +20,11 @@ const Edit = () => {
         fetch(`/api/post/edit/${title}`)
         .then(response => response.json())
         .then(data => {
-            setPost(() => data[0])
+            setPost(() => data[0]);
             setTimeStamp(() => data[0].timestamp);
-            setID(() => data[0]._id)
+            setID(() => data[0]._id);
+            setTitleEdited(() => data[0].title);
+            setBodyEdited(() => data[0].body)
         })
     }, [])
 
