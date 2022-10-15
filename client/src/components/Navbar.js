@@ -29,7 +29,12 @@ const Navbar = ({isInHome, isInLogIn}) => {
                     <a href = '/' className={`link-navbar first-navbar-link`}>Home</a>
                 </div>
             ):(
-                isToken ? ( <a href='/create-post' className='create-link'>Create</a>):(
+                isToken ? ( 
+                    <div className='navbar-item a-links'>
+                        <a href = '/' className={`link-navbar first-navbar-link`}>Home</a>
+                        <a href='/create-post' className='create-link'>Create</a>
+                    </div>
+                    ):(
                     <div className='navbar-item a-links'>
                         <a href = '/' className={`link-navbar first-navbar-link`}>Home</a>
                         <a href='/login' className='sign-in'>Log in</a>
