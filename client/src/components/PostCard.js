@@ -38,7 +38,16 @@ const PostCard = ({title, timestamp, _id}) => {
         ):(
             <div className='container-edit-delete-No-Token'></div>
         )}
-        <div className='title-post-card item-card'>{title}</div>
+        <div className='title-post-card item-card'>
+            {title}
+            <form method='DELETE' className='msg-are-u-sure'>
+                Are you sure you want to delete the post {formattedTitle}?
+                <div className='buttons-are-u-sure'>
+                    <button className='btn-form-sure yes-btn'>Yes</button>
+                    <button className='btn-form-sure no-btn'>No</button>
+                </div>
+            </form>
+        </div>
         <div className='timestamp-button'>
             <Link to={`post/${formattedTitle}`} className = 'Link-Router'>
                 <button className='read'>Read</button>
