@@ -26,6 +26,6 @@ router.get('/check-token', apiController.api_token_verify, apiController.api_is_
 router.get('/post/edit/:title', apiController.fetch_post);
 
 //API para actualizar POSTS
-router.post('/api/edit/post', apiController.api_update_post);
+router.post('/edit/post', apiController.api_token_verify, apiController.api_update_post);
 
 module.exports = router;

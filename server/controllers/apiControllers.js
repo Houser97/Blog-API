@@ -126,13 +126,13 @@ exports.api_is_logged_in = function(req, res, next){
 exports.api_update_post = [
     (req, res, next) => {
         jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err) => {
-            if(err) return res.sendStatus(403)
+            if(err) return res.json('There is no token')
             next()
         })
     },
 
-    body('title', 'Title should not be empty').trim().isLength({min:5}).escape(),
-    body('body', 'Body must not be empty').trim().isLength({min:5}),
+    body('titleEdited', 'Title should not be empty').trim().isLength({min:5}).escape(),
+    body('bodyEdited', 'Body must not be empty').trim().isLength({min:5}),
 
     (req, res, next) => {
         const errors = validationResult(req);
