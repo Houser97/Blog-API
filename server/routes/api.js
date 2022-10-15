@@ -22,4 +22,7 @@ router.post('/post/create-post', apiController.api_token_verify , apiController.
 //API para preguntar si hay usuario en sesión
 router.get('/check-token', apiController.api_token_verify, apiController.api_is_logged_in);
 
+//API para buscar un solo POST sin comentarios (para Edit component)
+router.get('/post/edit/:title', apiController.fetch_post);
+
 module.exports = router;
