@@ -8,7 +8,7 @@ import '../styles/Edit.css'
 const Edit = () => {
 
     const [post, setPost] = useState(null)
-    const [bodyFormatted, setBodyFormatted] = useState('')
+    /*const [bodyFormatted, setBodyFormatted] = useState('')*/
     const {title} = useParams()
 
     useEffect(() => {
@@ -17,6 +17,7 @@ const Edit = () => {
         .then(data => setPost(() => data.post[0]))
     }, [])
 
+    /*
     useEffect(() => {
         if(post !== null){
             const regex = /(<([^>]+)>)/ig;
@@ -24,7 +25,7 @@ const Edit = () => {
             const result = text.replace(regex, "");
             setBodyFormatted(result)
         }
-    },[post])
+    },[post])*/
 
 
   return (
@@ -42,9 +43,10 @@ const Edit = () => {
                             <label htmlFor='title-edit'>Title:</label>
                             <input className='input-edit' id='title-edit' value={post.title}></input>
                         </div>
+                        <label className='label-edit'>Body:</label>
                         <Editor 
                         textareaName='edit-body'
-                        initialValue={bodyFormatted}
+                        initialValue={post.body}
                         /*onEditorChange={newText => setBody(newText)}*/
                         init={{
                             height: 500,
