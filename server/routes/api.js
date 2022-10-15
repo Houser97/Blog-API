@@ -28,4 +28,7 @@ router.get('/post/edit/:title', apiController.fetch_post);
 //API para actualizar POSTS
 router.post('/edit/post', apiController.api_token_verify, apiController.api_update_post);
 
+//API para eliminar POSTS
+router.post('/delete/post/:id', apiController.api_token_verify, apiController.api_delete_post);
+
 module.exports = router;
