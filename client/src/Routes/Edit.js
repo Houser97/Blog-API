@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import {Editor} from '@tinymce/tinymce-react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import '../styles/Edit.css'
 
 const Edit = () => {
 
@@ -26,33 +27,35 @@ const Edit = () => {
             post.length===0 ? (
                 <div className='no-post-edit'>This post does not exist</div>
             ):(
-                <form method='POST'>
-                    <div className='form-div-edit'>
-                        <label htmlFor='title-edit'>Title:</label>
-                        <input className='input-edit' id='title-edit' value={post.title}></input>
-                    </div>
-                    <Editor 
-                    textareaName='edit-body'
-                    /*initialValue='Write post comment'
-                    onEditorChange={newText => setBody(newText)}*/
-                    init={{
-                        height: 500,
-                        width: '100%',
-                        menubar: false,
-                        plugins: [
-                        'advlist autolink lists link image charmap print preview anchor',
-                        'searchreplace visualblocks code fullscreen',
-                        'insertdatetime media table paste code help wordcount'
-                        ],
-                        toolbar: 'undo redo | formatselect | ' +
-                        'bold italic backcolor | alignleft aligncenter ' +
-                        'alignright alignjustify | bullist numlist outdent indent | ' +
-                        'removeformat | help',
-                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-                    }}
-                    />
-                    <button className='post-submit-form'>Submit</button>
-                </form>
+                <div className='div-container-form-edit'>
+                    <form method='POST' className='post-edit'>
+                        <div className='form-div-edit'>
+                            <label htmlFor='title-edit'>Title:</label>
+                            <input className='input-edit' id='title-edit' value={post.title}></input>
+                        </div>
+                        <Editor 
+                        textareaName='edit-body'
+                        /*initialValue='Write post comment'
+                        onEditorChange={newText => setBody(newText)}*/
+                        init={{
+                            height: 500,
+                            width: '100%',
+                            menubar: false,
+                            plugins: [
+                            'advlist autolink lists link image charmap print preview anchor',
+                            'searchreplace visualblocks code fullscreen',
+                            'insertdatetime media table paste code help wordcount'
+                            ],
+                            toolbar: 'undo redo | formatselect | ' +
+                            'bold italic backcolor | alignleft aligncenter ' +
+                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                            'removeformat | help',
+                            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                        }}
+                        />
+                        <button className='post-submit-form'>Submit</button>
+                    </form>
+                </div>
             )
         )}
         <Footer />
