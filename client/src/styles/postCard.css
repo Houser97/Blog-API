@@ -84,3 +84,7 @@
 .svg-edit{
     margin-left: 10px;
 }
+
+.container-edit-delete-No-Token{
+    display: none;
+}

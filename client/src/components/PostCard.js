@@ -28,7 +28,7 @@ const PostCard = ({title, timestamp}) => {
                 </svg>
             </div>
         ):(
-            <div className='container-edit-delete'></div>
+            <div className='container-edit-delete-No-Token'></div>
         )}
         <div className='title-post-card item-card'>{title}</div>
         <div className='timestamp-button'>
