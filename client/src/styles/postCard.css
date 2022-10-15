@@ -105,6 +105,8 @@
     padding: 5px 10px;
     display: flex; flex-flow: column;
     justify-content: space-between;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in-out;
 }
 
 .buttons-are-u-sure{
