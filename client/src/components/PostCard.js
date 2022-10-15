@@ -9,7 +9,8 @@ const PostCard = ({title, timestamp, _id}) => {
 
     const [formattedDate, setFormattedDate] = useState('');
     const [formattedTitle, setFormattedTitle] = useState('');
-    const [isToken] = useContext(isTokenContext)
+    const [showMsg, setshowMsg] = useState(false);
+    const [isToken] = useContext(isTokenContext);
 
     useEffect(() => {
         setFormattedDate(moment(timestamp).format('MMM Do yyyy'))
@@ -40,7 +41,7 @@ const PostCard = ({title, timestamp, _id}) => {
         )}
         <div className='title-post-card item-card'>
             {title}
-            <form method='DELETE' className='msg-are-u-sure'>
+            <form method='DELETE' className={`msg-are-u-sure ${showMsg ? 'showMsg' : ''}`}>
                 Are you sure you want to delete this post?
                 <div className='buttons-are-u-sure'>
                     <button className='btn-form-sure yes-btn'>Yes</button>

@@ -126,6 +126,9 @@
     font-weight: 800;
 }
 
+.showMsg{
+    transform: translateY(0%);
+}
 
 .yes-btn{
     background-color: #90ee90;
