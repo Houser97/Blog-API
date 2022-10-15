@@ -81,10 +81,14 @@
     cursor: pointer;
 }
 
-.svg-edit{
-    margin-left: 10px;
-}
-
 .container-edit-delete-No-Token{
     display: none;
+}
+
+.a-svg-edit-delete{
+    width: 24px; height: 24px;
+    margin-left: 10px;
+    display: flex; 
+    align-items: center; justify-content: center;
+    color: black;
 }
