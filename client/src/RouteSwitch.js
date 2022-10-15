@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App'
 import CreatePost from './Routes/CreatePost'
+import Edit from './Routes/Edit'
 import Login from './Routes/Login'
 import Post from './Routes/Post'
 
@@ -33,6 +34,7 @@ const RouteSwitch = () => {
           <Routes>
               <Route path='/' element = {<App />} />
               <Route path='/post/:title' element = {<Post />}/>
+              <Route path='/post/edit/:title' element = {<Edit />}/>
               <Route path='/login' element = {<Login />} />
               <Route path='/create-post' element = {<CreatePost />} />
           </Routes>
