@@ -13,13 +13,7 @@ const Edit = () => {
     const isInEdit = true;
 
     useEffect(() => {
-        fetch(`/api/post/${title}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({isInEdit})
-        })
+        fetch(`/api/post/${title}`)
         .then(response => response.json())
         .then(data => setPost(() => data.post[0]))
     }, [])

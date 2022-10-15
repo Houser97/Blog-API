@@ -32,6 +32,16 @@ exports.fetch_post_and_comments = function(req, res, next){
     })
 }
 
+// Controlador para buscar Post sin comentarios (para Edit component)
+exports.fetch_post = function(req, res, next){
+    let title = req.params.title;
+    title = title.replace(/-/g, ' ');
+    Post.find({'title': {$eq: title}}).exec(function(err, post){
+        if(err) return next(err)
+        res.json(post)
+    })
+}
+
 // JWT
 
 // Controlador para autenticación y obtener Token
