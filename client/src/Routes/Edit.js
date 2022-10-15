@@ -45,6 +45,7 @@ const Edit = () => {
                 content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
               }}
             />
+            <button className='post-submit-form'>Submit</button>
         </form>
         <Footer />
     </div>
