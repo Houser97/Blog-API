@@ -10,12 +10,11 @@ const Edit = () => {
     const [post, setPost] = useState(null)
     /*const [bodyFormatted, setBodyFormatted] = useState('')*/
     const {title} = useParams()
-    const isInEdit = true;
 
     useEffect(() => {
-        fetch(`/api/post/${title}`)
+        fetch(`/api/post/edit/${title}`)
         .then(response => response.json())
-        .then(data => setPost(() => data.post[0]))
+        .then(data => setPost(() => data[0]))
     }, [])
 
     /*
