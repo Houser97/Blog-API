@@ -103,4 +103,28 @@
     top: 0px;
     color: black;
     padding: 5px 10px;
+    display: flex; flex-flow: column;
+    justify-content: space-between;
+}
+
+.buttons-are-u-sure{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn-form-sure{
+    font-family: 'MonteCarlo', cursive;
+    font-size: 20px;
+    border: none;
+    border-radius: 3px;
+    padding: 0px 20px;
+    cursor: pointer;
+    color: black;
+    font-weight: 800;
+}
+
+
+.yes-btn{
+    background-color: #90ee90;
 }

@@ -41,7 +41,7 @@ const PostCard = ({title, timestamp, _id}) => {
         <div className='title-post-card item-card'>
             {title}
             <form method='DELETE' className='msg-are-u-sure'>
-                Are you sure you want to delete the post {formattedTitle}?
+                Are you sure you want to delete this post?
                 <div className='buttons-are-u-sure'>
                     <button className='btn-form-sure yes-btn'>Yes</button>
                     <button className='btn-form-sure no-btn'>No</button>
