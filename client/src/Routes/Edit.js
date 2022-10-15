@@ -8,14 +8,23 @@ import '../styles/Edit.css'
 const Edit = () => {
 
     const [post, setPost] = useState(null)
+    const [bodyFormatted, setBodyFormatted] = useState('')
     const {title} = useParams()
 
     useEffect(() => {
         fetch(`/api/post/${title}`)
         .then(response => response.json())
         .then(data => setPost(() => data.post[0]))
-        .then(() => console.log(post.post[0]))
     }, [])
+
+    useEffect(() => {
+        if(post !== null){
+            const regex = /(<([^>]+)>)/ig;
+            const text = String(post.body)
+            const result = text.replace(regex, "");
+            setBodyFormatted(result)
+        }
+    },[post])
 
 
   return (
@@ -35,8 +44,8 @@ const Edit = () => {
                         </div>
                         <Editor 
                         textareaName='edit-body'
-                        /*initialValue='Write post comment'
-                        onEditorChange={newText => setBody(newText)}*/
+                        initialValue={bodyFormatted}
+                        /*onEditorChange={newText => setBody(newText)}*/
                         init={{
                             height: 500,
                             width: '100%',
