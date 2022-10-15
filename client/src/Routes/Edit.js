@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {Editor} from '@tinymce/tinymce-react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -14,6 +14,7 @@ const Edit = () => {
     const [bodyEdited, setBodyEdited] = useState(null)
     /*const [bodyFormatted, setBodyFormatted] = useState('')*/
     const {title} = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch(`/api/post/edit/${title}`)
@@ -36,6 +37,7 @@ const Edit = () => {
     },[post])*/
 
     const UpdatePostAPI = (e) => {
+        
         e.preventDefault();
         const token = JSON.parse(localStorage.getItem('token'));
         fetch('/api/edit/post', {
@@ -46,7 +48,9 @@ const Edit = () => {
             },
             body: JSON.stringify({titleEdited, bodyEdited, timestamp, ID})
         }).then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data === 'Updated') navigate('/')
+        })
     }
 
 
