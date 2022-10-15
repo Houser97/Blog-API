@@ -17,8 +17,16 @@ const PostCard = ({title, timestamp, _id}) => {
         setFormattedTitle(title.replace(/\s/g, '-'))
     }, [])
 
-    const DeletePostAPI = () => {
-        fetch(`/api/delete/post/${_id}`)
+    const DeletePostAPI = (e) => {
+        e.preventDefault();
+        const token = JSON.parse(localStorage.getItem('token'));
+        fetch(`/api/delete/post/${_id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token.token}`
+            }
+        })
         .then(response => response.json())
         .then(data => console.log(data))
     }
@@ -45,7 +53,8 @@ const PostCard = ({title, timestamp, _id}) => {
         )}
         <div className='title-post-card item-card'>
             {title}
-            <form method='DELETE' className={`msg-are-u-sure ${showMsg ? 'showMsg' : ''}`}>
+            <form method='DELETE' className={`msg-are-u-sure ${showMsg ? 'showMsg' : ''}`}
+            onSubmit={(e) => DeletePostAPI(e)}>
                 Are you sure you want to delete this post?
                 <div className='buttons-are-u-sure'>
                     <button className='btn-form-sure yes-btn'>Yes</button>
