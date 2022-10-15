@@ -121,6 +121,40 @@ exports.api_is_logged_in = function(req, res, next){
     })
 }
 
+
+// Controlador para actualizar POSTS
+exports.api_update_post = [
+    (req, res, next) => {
+        jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err) => {
+            if(err) return res.sendStatus(403)
+            next()
+        })
+    },
+
+    body('title', 'Title should not be empty').trim().isLength({min:5}).escape(),
+    body('body', 'Body must not be empty').trim().isLength({min:5}),
+
+    (req, res, next) => {
+        const errors = validationResult(req);
+        const postUpdated = new Post({
+            title: req.body.titleEdited,
+            body: req.body.bodyEdited,
+            timestamp: req.body.timestamp,
+            _id: req.body.ID,
+        });
+
+        if(!errors.isEmpty()){
+            return res.json('There are errors')
+        } else {
+            Post.findByIdAndUpdate(req.body.ID, postUpdated, {}, (err) => {
+                if(err) return next(err)
+                return res.json('Updated');
+            })
+        }
+    }
+    
+]
+
 // Controlador para crear comentario
 exports.api_create_comment = [
     body('username', 'Username should not be empty').trim().isLength({min: 3}).escape(),
