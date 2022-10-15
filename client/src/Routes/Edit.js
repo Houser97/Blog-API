@@ -8,6 +8,8 @@ import '../styles/Edit.css'
 const Edit = () => {
 
     const [post, setPost] = useState(null)
+    const [titleEdited, setTitleEdited] = useState(null)
+    const [bodyEdited, setBodyEdited] = useState(null)
     /*const [bodyFormatted, setBodyFormatted] = useState('')*/
     const {title} = useParams()
 
@@ -41,13 +43,14 @@ const Edit = () => {
                     <form method='POST' className='post-edit'>
                         <div className='form-div-edit'>
                             <label htmlFor='title-edit'>Title:</label>
-                            <input className='input-edit' id='title-edit' value={post.title}></input>
+                            <input className='input-edit' id='title-edit' defaultValue={post.title}
+                            onChange = {(e) => setTitleEdited(e.target.value)} required></input>
                         </div>
                         <label className='label-edit'>Body:</label>
                         <Editor 
                         textareaName='edit-body'
                         initialValue={post.body}
-                        /*onEditorChange={newText => setBody(newText)}*/
+                        onEditorChange={newText => setBodyEdited(newText)}
                         init={{
                             height: 500,
                             width: '100%',
