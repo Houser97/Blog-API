@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import '../styles/PostComponent.css'
 import moment from 'moment'
 import CommentsSection from './CommentsSection'
@@ -9,15 +9,10 @@ const PostComponent = ({post, comments}) => {
 
   const {title, body, timestamp} = post[0]
 
-  const [formattedTime, setFormattedTime] = useState(timestamp)
+  const formattedTime = moment(timestamp).format('MMMM Do yyyy HH:ss')
   const formattedTitle= title.replace(/\s/g,'-');
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
   const [isToken] = useContext(isTokenContext)
-
-  useEffect(() => {
-    setFormattedTime(moment(timestamp).format('MMMM Do yyyy HH:ss'))
-    console.log(isToken)
-  }, [])
 
   return (
     <div className='post-component'>
