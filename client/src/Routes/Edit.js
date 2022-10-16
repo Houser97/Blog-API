@@ -9,11 +9,13 @@ const Edit = () => {
 
     const [post, setPost] = useState(null)
     const [titleEdited, setTitleEdited] = useState(null)
+    const [published, setPublished] = useState(true)
     const [timestamp, setTimeStamp] = useState(null)
     const [ID, setID] = useState(null)
     const [bodyEdited, setBodyEdited] = useState(null)
     /*const [bodyFormatted, setBodyFormatted] = useState('')*/
     const {title} = useParams()
+    const token = JSON.parse(localStorage.getItem('token'));
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -39,16 +41,14 @@ const Edit = () => {
     },[post])*/
 
     const UpdatePostAPI = (e) => {
-        
         e.preventDefault();
-        const token = JSON.parse(localStorage.getItem('token'));
         fetch('/api/edit/post', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token.token}` 
             },
-            body: JSON.stringify({titleEdited, bodyEdited, timestamp, ID})
+            body: JSON.stringify({titleEdited, bodyEdited, timestamp, ID, published})
         }).then(response => response.json())
         .then(data => {
             if(data === 'Updated') navigate('/')
@@ -93,6 +93,19 @@ const Edit = () => {
                             content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                         }}
                         />
+                        <div className='published-div'>
+                            <div className='label-radio-btn'>Published:</div>
+                            <div className='published-subdiv'>
+                                <input type='radio' id='radio-true' className='radio' name='published' defaultChecked
+                                onChange={(e) => {if(e.target.checked) setPublished(true)}}></input>
+                                <label htmlFor='radio-true' className='label-radio'>True</label>
+                            </div>
+                            <div className='published-subdiv'>
+                                <input type='radio' id='radio-false' className='radio' name='published'
+                                onChange={(e) => {if(e.target.checked) setPublished(false)}}></input>
+                                <label htmlFor='radio-false' className='label-radio'>False</label>
+                            </div>
+                        </div>
                         <button className='post-submit-form'>Submit</button>
                     </form>
                 </div>

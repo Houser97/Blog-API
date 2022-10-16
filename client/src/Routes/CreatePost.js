@@ -70,7 +70,6 @@ const CreatePost = () => {
               </div>
             </div>
             <button className='post-submit-form'>Submit</button>
-            {published}
           </form>
         </div>
         <Footer />
