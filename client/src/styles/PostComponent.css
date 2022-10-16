@@ -71,3 +71,17 @@
     z-index: 40;
     height: 100%;
 }
+
+.delete-msg-prevention-2{
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgb(226, 227, 226);
+    display: flex; 
+    flex-flow: column;
+    padding: 10px 10px;
+    font-family: 'MonteCarlo', cursive;
+    font-size: 40px;
+    font-weight: 800;
+}
