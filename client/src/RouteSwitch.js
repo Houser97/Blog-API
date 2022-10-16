@@ -5,6 +5,7 @@ import CreatePost from './Routes/CreatePost'
 import Edit from './Routes/Edit'
 import Login from './Routes/Login'
 import Post from './Routes/Post'
+import UnpublishedPosts from './Routes/UnpublishedPosts'
 
 export const isTokenContext = createContext();
 
@@ -34,6 +35,7 @@ const RouteSwitch = () => {
           <Routes>
               <Route path='/' element = {<App />} />
               <Route path='/post/:title' element = {<Post />}/>
+              <Route path='/unpublished-posts' element = {<UnpublishedPosts />} />
               <Route path='/post/edit/:title' element = {<Edit />}/>
               <Route path='/login' element = {<Login />} />
               <Route path='/create-post' element = {<CreatePost />} />
