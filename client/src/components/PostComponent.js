@@ -7,20 +7,12 @@ import HTMLReactParser from 'html-react-parser'
 const PostComponent = ({post, comments}) => {
 
   const {title, body, timestamp} = post[0]
-  const [commentsState, setCommentsState] = useState(null)
 
   const [formattedTime, setFormattedTime] = useState(timestamp)
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
 
   useEffect(() => {
     setFormattedTime(moment(timestamp).format('MMMM Do yyyy HH:ss'))
-    if(comments.length){
-      if(comments.length > 0) setCommentsState(() => [...comments])
-    } 
-
-    return () => {
-      setCommentsState(() => null)
-    }
   }, [])
 
   return (
