@@ -9,7 +9,7 @@ const CreatePost = () => {
 
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
-  const [published, setPublished] = useState('true')
+  const [published, setPublished] = useState(true)
   const [token, setToken] = useState(JSON.parse(localStorage.getItem('token'))) // Convieret objeto string en objeto
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const CreatePost = () => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token.token}`
       },
-      body: JSON.stringify({title, body: body.toString()})
+      body: JSON.stringify({title, body, published})
     }).then(response => response.json())
     .then(data => data === 'Correct' ? navigate('/') : console.log(data))
   }
@@ -60,12 +60,12 @@ const CreatePost = () => {
               <div className='label-radio-btn'>Published:</div>
               <div className='published-subdiv'>
                 <input type='radio' id='radio-true' className='radio' name='published' defaultChecked
-                onChange={(e) => {if(e.target.checked) setPublished('true')}}></input>
+                onChange={(e) => {if(e.target.checked) setPublished(true)}}></input>
                 <label htmlFor='radio-true' className='label-radio'>True</label>
               </div>
               <div className='published-subdiv'>
                 <input type='radio' id='radio-false' className='radio' name='published'
-                onChange={(e) => {if(e.target.checked) setPublished('false')}}></input>
+                onChange={(e) => {if(e.target.checked) setPublished(false)}}></input>
                 <label htmlFor='radio-false' className='label-radio'>False</label>
               </div>
             </div>
