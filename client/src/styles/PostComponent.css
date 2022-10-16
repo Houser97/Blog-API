@@ -80,8 +80,29 @@
     background-color: rgb(226, 227, 226);
     display: flex; 
     flex-flow: column;
-    padding: 10px 10px;
+    align-items: center;
+    padding: 22px 20px;
     font-family: 'MonteCarlo', cursive;
     font-size: 40px;
     font-weight: 800;
+    border-radius: 10px;
+}
+
+.buttons-msg-prevention-2{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.yes-btn-2{
+    font-family: 'MonteCarlo', cursive;
+    font-size: 20px;
+    border: none;
+    border-radius: 3px;
+    padding: 0px 20px;
+    cursor: pointer;
+    color: black;
+    font-weight: 800;
+    background-color: #90ee90;
 }

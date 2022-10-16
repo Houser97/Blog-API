@@ -23,9 +23,9 @@ const PostComponent = ({post, comments}) => {
     <div className='post-component'>
       <div className='delete-msg-prevention-container'>
         <div className='delete-msg-prevention-2'>
-          Are you sure you want
+          Are you sure you want to delete this post?
           <div className='buttons-msg-prevention-2'>
-            <button className='yes-btn'>Yes</button>
+            <button className='yes-btn-2'>Yes</button>
             <div className='btn-form-sure no-btn' /*onClick={() => handleDeleteMsg()}*/>No</div>
             {/* La clase de los botones está definida en POST CARD CSS */}
           </div>
