@@ -22,6 +22,20 @@
     background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
+.container-edit-delete-post{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    display: flex;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.post-component-article:hover .container-edit-delete-post{
+    opacity: 1;
+} 
+
 .post-component-title {
     font-size: 60px;
     margin: 0px;
