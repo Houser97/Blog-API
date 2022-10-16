@@ -4,18 +4,32 @@ import moment from 'moment'
 import CommentsSection from './CommentsSection'
 import HTMLReactParser from 'html-react-parser'
 import { isTokenContext } from '../RouteSwitch'
+import { useNavigate } from 'react-router-dom'
 
 const PostComponent = ({post, comments}) => {
 
-  const {title, body, timestamp} = post[0]
+  const {title, body, timestamp, _id} = post[0]
   const formattedTime = moment(timestamp).format('MMMM Do yyyy HH:ss')
   const formattedTitle= title.replace(/\s/g,'-');
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
   const [isToken] = useContext(isTokenContext);
-  const [showMsg, setShowMsg] = useState(false)
+  const token = JSON.parse(localStorage.getItem('token'));
+  const [showMsg, setShowMsg] = useState(false);
+  const navigate = useNavigate();
 
   const showMsgDelete = () => {
     setShowMsg(prev => !prev);
+  }
+
+  const DeletePostAPI = () => {
+    fetch(`/api/delete/post/${_id}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token.token}`,
+      },
+    }).then(response => response.json())
+    .then(data =>{ if(data === 'Removed') navigate('/')})
   }
 
   return (
@@ -24,7 +38,7 @@ const PostComponent = ({post, comments}) => {
         <div className='delete-msg-prevention-2'>
           Are you sure you want to delete this post?
           <div className='buttons-msg-prevention-2'>
-            <button className='yes-btn-2'>Yes</button>
+            <div className='yes-btn-2' onClick={() => DeletePostAPI()}>Yes</div>
             <div className='btn-form-sure no-btn' onClick={() => showMsgDelete()}>No</div>
             {/* La clase de los botones está definida en POST CARD CSS */}
           </div>
