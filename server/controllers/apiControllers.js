@@ -42,6 +42,17 @@ exports.fetch_post = function(req, res, next){
     })
 }
 
+// Controlador para buscar Post sin publicar
+exports.api_fetch_unpublished_posts = (req, res, next) => {
+    jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err) => {
+        if(err) return res.json('Token is not valid.');
+        Post.find({'published': false}).sort([['title', 'ascending']]).exec((err, result) => {
+            if(err) return res.json('Sth went wrong');
+            res.json(result)
+        })
+    })
+}
+
 // JWT
 
 // Controlador para autenticación y obtener Token

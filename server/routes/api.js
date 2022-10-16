@@ -7,6 +7,9 @@ const apiController = require('../controllers/apiControllers');
 // API para buscar todos los POSTS en la base de datos con PUBLISHED TRUE
 router.get('/posts', apiController.fetch_posts);
 
+// API para buscar todos los POSTS en la base de datos con PUBLISHED FALSE
+router.get('/unpublished-posts', apiController.api_token_verify, apiController.api_fetch_unpublished_posts);
+
 // API para buscar un determinado POST en la base da datos junto con sus comentarios.
 router.get('/post/:title', apiController.fetch_post_and_comments);
 
