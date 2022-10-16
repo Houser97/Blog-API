@@ -9,6 +9,7 @@ const CreatePost = () => {
 
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
+  const [published, setPublished] = useState('true')
   const [token, setToken] = useState(JSON.parse(localStorage.getItem('token'))) // Convieret objeto string en objeto
   const navigate = useNavigate();
 
@@ -58,15 +59,18 @@ const CreatePost = () => {
             <div className='published-div'>
               <div className='label-radio-btn'>Published:</div>
               <div className='published-subdiv'>
-                <input type='radio' id='radio-true' className='radio' name='published' checked></input>
+                <input type='radio' id='radio-true' className='radio' name='published' defaultChecked
+                onChange={(e) => {if(e.target.checked) setPublished('true')}}></input>
                 <label htmlFor='radio-true' className='label-radio'>True</label>
               </div>
               <div className='published-subdiv'>
-                <input type='radio' id='radio-false' className='radio' name='published'></input>
+                <input type='radio' id='radio-false' className='radio' name='published'
+                onChange={(e) => {if(e.target.checked) setPublished('false')}}></input>
                 <label htmlFor='radio-false' className='label-radio'>False</label>
               </div>
             </div>
             <button className='post-submit-form'>Submit</button>
+            {published}
           </form>
         </div>
         <Footer />
