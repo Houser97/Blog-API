@@ -3,12 +3,14 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import '../styles/CreatePost.css'
 import {Editor} from '@tinymce/tinymce-react'
+import { useNavigate } from 'react-router-dom'
 
 const CreatePost = () => {
 
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [token, setToken] = useState(JSON.parse(localStorage.getItem('token'))) // Convieret objeto string en objeto
+  const navigate = useNavigate();
 
   const createPostAPI = (e) => {
     e.preventDefault()
@@ -20,6 +22,7 @@ const CreatePost = () => {
       },
       body: JSON.stringify({title, body: body.toString()})
     }).then(response => response.json())
+    .then(data => data === 'Correct' ? navigate('/') : console.log(data))
   }
 
   return (
