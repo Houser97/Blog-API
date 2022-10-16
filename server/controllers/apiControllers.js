@@ -99,7 +99,7 @@ exports.api_create_post = [
         const post = new Post({
             title: req.body.title,
             body: req.body.body,
-            published: true,
+            published: req.body.published,
         });
 
         if(!errors.isEmpty()){
