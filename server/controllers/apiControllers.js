@@ -139,6 +139,7 @@ exports.api_update_post = [
             title: req.body.titleEdited,
             body: req.body.bodyEdited,
             timestamp: req.body.timestamp,
+            published: req.body.published,
             _id: req.body.ID,
         });
 
