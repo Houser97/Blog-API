@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import '../styles/PostComponent.css'
 import moment from 'moment'
 import CommentsSection from './CommentsSection'
@@ -8,20 +8,24 @@ import { isTokenContext } from '../RouteSwitch'
 const PostComponent = ({post, comments}) => {
 
   const {title, body, timestamp} = post[0]
-
   const formattedTime = moment(timestamp).format('MMMM Do yyyy HH:ss')
   const formattedTitle= title.replace(/\s/g,'-');
   //const [bodyParsed, setBodyParsed] = useState(new DOMParser().parseFromString(body, 'text/xml'))
-  const [isToken] = useContext(isTokenContext)
+  const [isToken] = useContext(isTokenContext);
+  const [showMsg, setShowMsg] = useState(false)
+
+  const showMsgDelete = () => {
+    setShowMsg(prev => !prev);
+  }
 
   return (
     <div className='post-component'>
-      <div className='delete-msg-prevention-container'>
+      <div className={`delete-msg-prevention-container ${showMsg ? 'show':''}`}>
         <div className='delete-msg-prevention-2'>
           Are you sure you want to delete this post?
           <div className='buttons-msg-prevention-2'>
             <button className='yes-btn-2'>Yes</button>
-            <div className='btn-form-sure no-btn' /*onClick={() => handleDeleteMsg()}*/>No</div>
+            <div className='btn-form-sure no-btn' onClick={() => showMsgDelete()}>No</div>
             {/* La clase de los botones está definida en POST CARD CSS */}
           </div>
         </div>
@@ -29,7 +33,7 @@ const PostComponent = ({post, comments}) => {
       <div className='post-component-article'>
         {isToken ? (
           <div className='container-edit-delete-post'>
-            <svg className='svg-edit-delete' viewBox="0 0 24 24" /*onClick={() => handleDeleteMsg()}*/>
+            <svg className='svg-edit-delete' viewBox="0 0 24 24" onClick={() => showMsgDelete()}>
               <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
             </svg>
             <a href={`edit/${formattedTitle}`} className = 'a-svg-edit-delete'>
