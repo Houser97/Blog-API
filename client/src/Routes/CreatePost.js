@@ -59,11 +59,11 @@ const CreatePost = () => {
               <div className='label-radio-btn'>Published:</div>
               <div className='published-subdiv'>
                 <input type='radio' id='radio-true' className='radio' name='published' checked></input>
-                <label htmlFor='radio-true'>True</label>
+                <label htmlFor='radio-true' className='label-radio'>True</label>
               </div>
               <div className='published-subdiv'>
                 <input type='radio' id='radio-false' className='radio' name='published'></input>
-                <label htmlFor='radio-false'>False</label>
+                <label htmlFor='radio-false' className='label-radio'>False</label>
               </div>
             </div>
             <button className='post-submit-form'>Submit</button>

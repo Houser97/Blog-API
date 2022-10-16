@@ -59,3 +59,42 @@
     margin-top: 20px;
     letter-spacing: 2px;
 }
+
+/* Radio Buttons */
+.published-div{
+    display: flex;
+    margin: 50px 0px;
+    font-family: 'MonteCarlo', cursive;;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.published-subdiv{
+    margin-left: 40px;
+}
+
+input[type = 'radio']{
+    display: none;
+}
+
+.label-radio{
+    padding: 0px 0px 0px 30px;
+    position: relative;
+}
+
+.label-radio:before{
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
