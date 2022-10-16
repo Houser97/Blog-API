@@ -55,6 +55,17 @@ const CreatePost = () => {
                 content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
               }}
             />
+            <div className='published-div'>
+              <div className='label-radio-btn'>Published:</div>
+              <div className='published-subdiv'>
+                <input type='radio' id='radio-true' className='radio' name='published' checked></input>
+                <label htmlFor='radio-true'>True</label>
+              </div>
+              <div className='published-subdiv'>
+                <input type='radio' id='radio-false' className='radio' name='published'></input>
+                <label htmlFor='radio-false'>False</label>
+              </div>
+            </div>
             <button className='post-submit-form'>Submit</button>
           </form>
         </div>
