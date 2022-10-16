@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 100px 40px; 
+    padding: 100px 40px 30px 0px; 
 }
 
 .create-form-post{
@@ -63,7 +63,7 @@
 /* Radio Buttons */
 .published-div{
     display: flex;
-    margin: 50px 0px;
+    margin: 50px 0px 20px 0px;
     font-family: 'MonteCarlo', cursive;;
     font-size: 40px;
     font-weight: 800;
@@ -85,6 +85,7 @@ input[type = 'radio']{
 .label-radio{
     padding: 0px 0px 0px 30px;
     position: relative;
+    cursor: pointer;
 }
 
 .label-radio:before{
@@ -93,8 +94,13 @@ input[type = 'radio']{
     left: 2px;
     top: 50%;
     transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     border: 1px solid black;
     border-radius: 50%;
+}
+
+input[type = 'radio']:checked + .label-radio:before {
+    border: 1px solid rgb(51, 180, 189);
+    background-color: rgb(51, 180, 189);
 }
