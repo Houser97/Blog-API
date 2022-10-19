@@ -40,19 +40,17 @@ const CommentCard = ({data}) => {
           ):(
               <div className='container-edit-delete-No-Token'></div>
           )}
+        <form method='DELETE' className={`msg-are-u-sure-MSG ${showMsg ? 'showMsg' : ''}`}
+        onSubmit={(e) => DeleteCommentAPI(e)}>
+            Are you sure you want to delete this comment?
+            <div className='buttons-are-u-sure-MSG'>
+                <button className='btn-form-sure yes-btn msg-yes'>Yes</button>
+                <div className='btn-form-sure no-btn' onClick={() => handleDeleteMsg()}>No</div>
+            </div>
+        </form>
         <div className='username-comment-div'>{username}</div>
         <div className='time-comment-divs'>
-            <div className='comment-comment-div comment-div'>
-                {comment}
-                <form method='DELETE' className={`msg-are-u-sure ${showMsg ? 'showMsg' : ''}`}
-                onSubmit={(e) => DeleteCommentAPI(e)}>
-                    Are you sure you want to delete this comment?
-                    <div className='buttons-are-u-sure'>
-                        <button className='btn-form-sure yes-btn'>Yes</button>
-                        <div className='btn-form-sure no-btn' onClick={() => handleDeleteMsg()}>No</div>
-                    </div>
-                </form>
-            </div>
+            <div className='comment-comment-div comment-div'>{comment}</div>
             <div className='timestamp-comment-div comment-div'>{formattedTime}</div>
         </div>
     </div>
