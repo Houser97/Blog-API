@@ -201,8 +201,19 @@ exports.api_create_comment = [
         } else {
             comment.save(function(err){
                 if(err) return next(err);
-                res.json('Comment created')
+                return res.json('Comment created')
             })
         }
     }
 ]
+
+// Controlador para eliminar comentario
+exports.api_delete_comment = function(req, res, next){
+    jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err) => {
+        if(err) return res.json('Sth went wrong');
+        Comment.findByIdAndRemove(req.body.ID, (err) => {
+            if(err) return res.json('Comment could not be removed');
+            return res.json('Removed')
+        })
+    })
+}

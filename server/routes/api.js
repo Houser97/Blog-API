@@ -16,6 +16,9 @@ router.get('/post/:title', apiController.fetch_post_and_comments);
 // API para crear un nuevo comentario
 router.post('/post/create-comment', apiController.api_create_comment)
 
+// API para eliminar un comentario
+router.post('/comment/delete/:id', apiController.api_token_verify, apiController.api_delete_comment);
+
 // API de LOGIN para obtener el toke
 router.post('/login', apiController.api_login_token)
 
