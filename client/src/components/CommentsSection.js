@@ -17,7 +17,6 @@ const CommentsSection = ({title, commentInfo}) => {
   }, [])
 
   const createCommentAPI = (e) => {
-    e.preventDefault()
     if(!username || !comment) return false;
     fetch('/api/post/create-comment', {
       method: 'POST',
@@ -26,6 +25,8 @@ const CommentsSection = ({title, commentInfo}) => {
       },
       body: JSON.stringify({username, comment, title})
     })
+    .then(response => response.json())
+    .then(response => console.log(response))
   }
 
   return (
