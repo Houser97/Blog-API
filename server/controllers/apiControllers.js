@@ -211,7 +211,7 @@ exports.api_create_comment = [
 exports.api_delete_comment = function(req, res, next){
     jwt.verify(req.token, `${process.env.SECRET_KEY}`, (err) => {
         if(err) return res.json('Sth went wrong');
-        Comment.findByIdAndRemove(req.body.ID, (err) => {
+        Comment.findByIdAndRemove(req.body._id, (err) => {
             if(err) return res.json('Comment could not be removed');
             return res.json('Removed')
         })
