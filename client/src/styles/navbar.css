@@ -106,3 +106,13 @@ a{
     height: 100%;
     position: absolute;
 }
+
+@media (max-width: 920px) {
+    .svg-responsive-nav{
+        display: flex;
+    }
+
+    .navbar-item.a-links{
+        display: none;
+    }
+}
