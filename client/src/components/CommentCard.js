@@ -11,13 +11,13 @@ const CommentCard = ({data}) => {
     const [isToken] = useContext(isTokenContext);
 
     const DeleteCommentAPI = (e) => {
-      const token = JSON.parse(localStorage.getItem('token'));
-      fetch(`/api/delete/comment/${_id}`, {
+      fetch(`/api/comment/delete/${_id}`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token.token}`
-          }
+          },
+          body: JSON.stringify({_id})
       })
       .then(response => response.json())
       .then(data => {
