@@ -91,3 +91,18 @@ a{
 .navbar-item .link-navbar {
     margin: 0px 0px 0px 50px;
 }
+
+/*Responsive section*/
+
+.svg-responsive-nav{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: none;
+}
+
+.svg-burger{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
