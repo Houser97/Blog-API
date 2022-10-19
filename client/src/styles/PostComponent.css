@@ -59,6 +59,8 @@
     font-size: 30px;
     font-family: 'Neuton', serif;
     margin-bottom: 100px;
+    width: 100%;
+    text-align: justify;
 }
 
 /*Clases para mensaje de prevención de borrado.*/
