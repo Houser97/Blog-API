@@ -66,6 +66,8 @@
 
 .a-links .link-navbar{
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .activeLink {
@@ -79,4 +81,13 @@ a{
 
 .unpublished-link{
     margin-left: 50px;
+}
+
+.navbar-item{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-item .link-navbar {
+    margin: 0px 0px 0px 50px;
 }
