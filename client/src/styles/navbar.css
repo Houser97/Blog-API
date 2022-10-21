@@ -141,7 +141,7 @@ a{
         display: flex;
     }
 
-    .navbar-item.a-links,
+    .navbar-sub-container .navbar-item.a-links,
     .navbar-ld{
         display: none;
     }
