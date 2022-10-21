@@ -11,6 +11,16 @@ const Navbar = ({isInHome, isInLogIn}) => {
     const close_menu = useRef(null);
     const nav = useRef(null)
 
+    const toggleNav = () => {
+        if(open_menu.current.style.visibility === 'visible'){
+            open_menu.current.style.visibility = 'hidden';
+            close_menu.current.style.visibility = 'visible';
+        } else {
+            open_menu.current.style.visibility = 'visible';
+            close_menu.current.style.visibility = 'hidden';
+        }
+    }
+
     return (
     <nav className='navbar'>
         <div className='navbar-item logo'>My Blog-API</div>
@@ -52,7 +62,7 @@ const Navbar = ({isInHome, isInLogIn}) => {
                 )
             )
         )}
-        <div className='svg-responsive-nav'>
+        <div className='svg-responsive-nav' onClick={() => toggleNav()}>
             <svg ref={open_menu} className='svg-burger svg-responsive' viewBox="0 0 24 24">
                 <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
             </svg>
