@@ -3,13 +3,22 @@
 .navbar {
     width: 100%;
     background-color: #121212;
-    display: flex;
-    padding: 20px 60px;
-    justify-content: space-between;
     font-family: 'Passion One', cursive;
-    align-items: center;
     position: fixed;
     z-index: 21;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-sub-container,
+.navbar-sm{
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar .logo{
@@ -118,12 +127,24 @@ a{
     visibility: visible;
 }
 
+.navbar-sm{
+    display: none;
+    position: absolute;
+    width: 100%; height: 100%;
+    z-index: -10;
+}
+
 @media (max-width: 920px) {
     .svg-responsive-nav{
         display: flex;
     }
 
-    .navbar-item.a-links{
+    .navbar-item.a-links,
+    .navbar-ld{
         display: none;
+    }
+
+    .navbar-sm{
+        display: flex;
     }
 }
