@@ -136,6 +136,20 @@ a{
     transition: transform 250ms ease-in-out;
 }
 
+.navbar-sm .navbar-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-sm .token-home{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 @media (max-width: 920px) {
     .svg-responsive-nav{
         display: flex;
