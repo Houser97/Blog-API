@@ -77,7 +77,7 @@ const Navbar = ({isInHome, isInLogIn}) => {
         
         <div ref={nav} className='navbar-sm'>
             {isInHome ? (
-                <div className='navbar-item-sm a-links-sm'>
+                <div className='navbar-item a-links'>
                     <a href = '#home' className={`link-navbar first-navbar-link 
                     ${activeLink === 'Home' ? 'activeLink' : ''}`} 
                     onClick={() => setActiveLink('Home')}>Home</a>
