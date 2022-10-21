@@ -15,9 +15,11 @@ const Navbar = ({isInHome, isInLogIn}) => {
         if(open_menu.current.style.visibility === 'visible'){
             open_menu.current.style.visibility = 'hidden';
             close_menu.current.style.visibility = 'visible';
+            nav.current.style.transform = 'translateY(100%)'
         } else {
             open_menu.current.style.visibility = 'visible';
             close_menu.current.style.visibility = 'hidden';
+            nav.current.style.transform = 'translateY(0%)'
         }
     }
 
@@ -73,7 +75,7 @@ const Navbar = ({isInHome, isInLogIn}) => {
             </div>
         </div>
         
-        <div className='navbar-sm'>
+        <div ref={nav} className='navbar-sm'>
             {isInHome ? (
                 <div className='navbar-item-sm a-links-sm'>
                     <a href = '#home' className={`link-navbar first-navbar-link 
