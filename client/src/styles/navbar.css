@@ -207,4 +207,9 @@ a{
     .navbar-sub-container{
         padding: 20px 10px;
     }
+
+    .svg-responsive-nav{
+        width: 38px;
+        height: 38px;
+    }
 }
