@@ -151,6 +151,17 @@ a{
     align-items: center;
 }
 
+.navbar-sm .navbar-item .link-navbar,
+.navbar-sm  a.unpublished-link,
+.navbar-sm  a.create-link{
+    margin: 3px 10px;
+}
+
+.navbar-sm .unpublished-link{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 @media (max-width: 920px) {
     .svg-responsive-nav{
         display: flex;
@@ -175,5 +186,21 @@ a{
 @media (max-width: 530px) {
     .navbar-sm{
         padding: 5px 5px;
+    }
+}
+
+@media (max-width: 520px) {
+    .navbar-sub-container{
+        padding: 20px 20px;
+    }
+}
+
+@media (max-width: 400px){
+    .navbar .logo{
+        font-size: 38px;
+    }
+
+    .navbar-sub-container{
+        padding: 20px 10px;
     }
 }

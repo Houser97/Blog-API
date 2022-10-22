@@ -38,8 +38,8 @@ const Navbar = ({isInHome, isInLogIn}) => {
 
                     {isToken ? ( 
                         <div className='token-home'>
-                            <a href = '/unpublished-posts' className='unpublished-link'>Unpublished</a>
-                            <a href='/create-post' className='create-link'>Create</a>
+                            <a href = '/unpublished-posts' className='unpublished-link link-nav'>Unpublished</a>
+                            <a href='/create-post' className='create-link link-nav'>Create</a>
                         </div>
                     ):(
                         <a href='/login' className='sign-in'>Log in</a>
@@ -54,8 +54,8 @@ const Navbar = ({isInHome, isInLogIn}) => {
                     isToken ? ( 
                         <div className='navbar-item a-links'>
                             <a href = '/' className='link-navbar first-navbar-link'>Home</a>
-                            <a href = '/unpublished-posts' className='link-navbar first-navbar-link'>Unpublished</a>
-                            <a href='/create-post' className='create-link'>Create</a>
+                            <a href = '/unpublished-posts' className='link-navbar first-navbar-link link-nav'>Unpublished</a>
+                            <a href='/create-post' className='create-link link-nav'>Create</a>
                         </div>
                         ):(
                         <div className='navbar-item a-links'>
