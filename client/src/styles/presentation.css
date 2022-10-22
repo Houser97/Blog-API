@@ -31,6 +31,7 @@
     font-weight: 100;
     padding: 10px 0px; margin: 0px;
     z-index: 3;
+    text-align: center;
 }
 
 .span-h1{
@@ -43,4 +44,24 @@
     font-size: 24px;
     font-weight: 0;
     z-index: 3;
+}
+
+@media (max-width: 900px){
+    .presentation-h1{
+        font-size: 100px;
+    }
+
+    .bg-opacity{
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 740px){
+    .presentation-h1{
+        font-size: 80px;
+    }
+
+    .bg-opacity{
+        padding: 0px 20px;
+    }
 }
