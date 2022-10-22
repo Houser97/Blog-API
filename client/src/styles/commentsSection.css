@@ -3,7 +3,7 @@
     flex-flow: column; align-items: center;
     background-color: green;
     padding: 50px 50px;
-    width: 80%;
+    width: 100%;
     background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
     margin-top: 50px;
     border-radius: 20px;
@@ -91,4 +91,16 @@
     font-family: 'MonteCarlo', cursive;
     font-weight: 800;
     letter-spacing: 1px;
+}
+
+@media (max-width: 760px){
+    .comments-section{
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 500px){
+    .textarea{
+        font-size: 18px;
+    }
 }
