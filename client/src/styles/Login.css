@@ -52,6 +52,7 @@
     font-weight: 900;
     letter-spacing: 1px;
     font-size: 36px;
+    text-align: center;
 }
 
 .login-button{
@@ -80,5 +81,48 @@
     .form-login{
         border-radius: 10px;
         width: 90%;
+    }
+}
+
+@media (max-width: 660px) {
+    .login-title{
+        font-size: 30px;
+    }
+
+    .form-login-wrapper{
+        padding: 60px 10px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .form-login input{
+        font-size: 20px;
+    }
+
+    .form-login label{
+        font-size: 24px;
+    }
+
+    .form-login{
+        padding: 30px 20px;
+    }
+
+    .login-button{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-title{
+        font-size: 23px;
+    }
+
+    .form-login input{
+        font-size: 17px;
+    }
+
+    .form-login label{
+        font-size: 21px;
     }
 }
