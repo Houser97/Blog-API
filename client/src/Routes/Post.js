@@ -16,9 +16,11 @@ const Post = () => {
       then(data => setBackendTitle(data)).catch(() => setBackendTitle('error'))
   }, [])
 
+  /*
   useEffect(() => {
     console.log(backendPost)
   }, [backendPost])
+ */
 
   return (
     <div className='Post-website'>
