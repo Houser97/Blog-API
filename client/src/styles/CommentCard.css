@@ -2,12 +2,13 @@
     display: grid;
     grid-template-columns: 0.5fr 1fr;
     width: 100%;
-    background-color: #ffe5b4;
+    background-color: #fff6e5;
     position: relative;
     border-radius: 10px;
     padding: 20px 10px;
     margin-bottom: 40px;
     overflow: hidden;
+    border: 1px black solid;
 }
 
 .container-delete-comment{
