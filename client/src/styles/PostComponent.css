@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
 
 .post-component{
-    padding: 120px 50px;
+    padding: 50px 80px;
     width: 100%;
     color:black;
     display: flex; flex-flow: column;
@@ -16,7 +16,7 @@
     align-items: center;
     position: relative;
     background-color: white;
-    width: 80%;
+    width: 100%;
     padding: 20px 50px 100px 50px;
     border-radius: 20px;
     background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
@@ -56,7 +56,7 @@
 }
 
 .post-component-body{
-    font-size: 30px;
+    font-size: 22px;
     font-family: 'Neuton', serif;
     margin-bottom: 100px;
     width: 100%;
@@ -111,4 +111,40 @@
     color: black;
     font-weight: 800;
     background-color: #90ee90;
+}
+
+@media (max-width: 880px) {
+    .post-component{
+        padding: 50px 40px;
+    }
+}
+
+@media (max-width: 680px) {
+    .post-component{
+        padding: 50px 20px;
+    }
+
+    .post-component-body{
+        font-size: 21px;
+    }
+
+    .post-component-timestamp{
+        font-size: 20px;
+    }
+
+    .post-component-article{
+        padding: 20px 30px 100px 30px;
+    }
+}
+
+@media (max-width: 580px) {
+    .post-component-body{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .post-component-timestamp{
+        bottom: 50px; right: 25px;
+    }
 }
