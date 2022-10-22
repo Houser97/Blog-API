@@ -48,7 +48,7 @@ const CommentCard = ({data}) => {
                 <div className='btn-form-sure no-btn' onClick={() => handleDeleteMsg()}>No</div>
             </div>
         </form>
-        <div className='username-comment-div'>{username}</div>
+        <div className='username-comment-div'>Username: {username}</div>
         <div className='time-comment-divs'>
             <div className='comment-comment-div comment-div'>{comment}</div>
             <div className='timestamp-comment-div comment-div'>{formattedTime}</div>

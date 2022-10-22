@@ -90,3 +90,24 @@
 .showMsg{
     transform: translateY(0%);
 }
+
+@media (max-width: 660px){
+    .username-comment-div{
+        font-size: 22px;
+    }
+
+    .comment-comment-div{
+        font-size: 20px;
+    }
+
+    .timestamp-comment-div{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 550px){
+    .comment-card{
+        display: flex;
+        flex-flow: column;
+    }
+}
