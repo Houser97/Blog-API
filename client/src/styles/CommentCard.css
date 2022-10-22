@@ -111,7 +111,7 @@
     }
 
     .timestamp-comment-div{
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
@@ -119,6 +119,14 @@
     .comment-card{
         display: flex;
         flex-flow: column;
+    }
+
+    .username-comment-div{
+        border-right: 0px solid black;
+        border-bottom: 1px solid black;
+        padding-right: 0px;
+        margin-right: 0px;
+        padding-bottom: 10px;
     }
 }
 
