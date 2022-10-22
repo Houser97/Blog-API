@@ -37,7 +37,7 @@
     font-size: 25px;
     width: 100%; height: 100%;
     z-index: 20;
-    top: 0px;
+    top: 0px; left: 0px;
     color: black;
     padding: 5px 10px;
     display: flex; flex-flow: column;
@@ -48,6 +48,7 @@
     font-family: 'MonteCarlo', cursive;
     font-size: 30px;
     font-weight: 800;
+    text-align: center;
 }
 
 .buttons-are-u-sure-MSG{
@@ -115,10 +116,17 @@
     }
 }
 
+@media (max-width: 580px){
+    .comment-card .msg-are-u-sure-MSG{
+        font-size: 25px;
+    }
+}
+
 @media (max-width: 550px){
     .comment-card{
         display: flex;
         flex-flow: column;
+        justify-content: stretch;
     }
 
     .username-comment-div{
