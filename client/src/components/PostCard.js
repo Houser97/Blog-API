@@ -64,7 +64,7 @@ const PostCard = ({title, timestamp, _id}) => {
             </form>
         </div>
         <div className='timestamp-button'>
-            <Link to={`post/${formattedTitle}`} className = 'Link-Router'>
+            <Link to={`/post/${formattedTitle}`} className = 'Link-Router'>
                 <button className='read'>Read</button>
             </Link>
             <div className='timestamp-post-card item-card'>{formattedDate}</div>
