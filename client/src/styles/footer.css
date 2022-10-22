@@ -9,11 +9,14 @@
     padding: 30px 60px;
     font-family: 'Passion One', cursive;
     z-index: 15;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .footer .logo {
     font-size: 46px;
     color: white;
+    align-items: center;
 }
 
 .footer-odin {
@@ -46,5 +49,19 @@
 @media (max-width: 540px) {
     .footer .logo{
         font-size: 36px;
+    }
+}
+
+@media (max-width: 490px) {
+    .footer .logo{
+        margin: auto;
+    }
+
+    .footer-odin {
+        margin: auto;
+    }
+
+    .footer{
+        flex-flow: column;
     }
 }
