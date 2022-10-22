@@ -1,7 +1,7 @@
 .div-container-form-edit{
     width: 100%;
     padding: 60px 130px;
-    padding-top: 130px;
+    padding-top: 60px;
     background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
 }
 
@@ -44,4 +44,39 @@
     font-weight: 800;
     letter-spacing: 2px;
     align-self: flex-start;
+}
+
+@media (max-width: 980px){
+    .div-container-form-edit{
+        padding: 60px 50px;
+    }
+}
+
+@media (max-width: 680px){
+    .input-edit{
+        font-size: 23px;
+    }
+
+    .div-container-form-edit .published-div{
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 570px){
+    .div-container-form-edit{
+        padding: 60px 16px;
+    }
+}
+
+@media (max-width: 520px){
+    .post-edit {
+        padding: 30px 17px;
+    }
+}
+
+@media (max-width: 480px){
+    .div-container-form-edit .published-div{
+        flex-flow: column;
+    }
 }
