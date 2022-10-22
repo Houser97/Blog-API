@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
 
 .post-component{
-    padding: 50px 80px;
+    padding: 50px 80px 0px 80px;
     width: 100%;
     color:black;
     display: flex; flex-flow: column;
@@ -72,6 +72,7 @@
     margin: -120px 0px;
     z-index: -100;
     height: 100%;
+    text-align: center;
 }
 
 .delete-msg-prevention-container.show{
@@ -117,6 +118,10 @@
     .post-component{
         padding: 50px 40px;
     }
+
+    .delete-msg-prevention-container .delete-msg-prevention-2{
+        width: 80%;
+    }
 }
 
 @media (max-width: 680px) {
@@ -135,7 +140,19 @@
     .post-component-article{
         padding: 20px 30px 100px 30px;
     }
+
+    .delete-msg-prevention-container .delete-msg-prevention-2{
+        font-size: 35px;
+        padding: 22px 10px;
+    }
 }
+
+@media (max-width: 600px){
+    .delete-msg-prevention-container .delete-msg-prevention-2{
+        font-size: 29px;
+    }
+}
+
 
 @media (max-width: 580px) {
     .post-component-body{
