@@ -99,8 +99,18 @@
     }
 }
 
+@media (max-width: 620px){
+    .no-comments{
+        font-size: 30px;
+    }
+}
+
 @media (max-width: 500px){
     .textarea{
         font-size: 18px;
+    }
+
+    .no-comments{
+        font-size: 26px;
     }
 }

@@ -117,3 +117,9 @@
         flex-flow: column;
     }
 }
+
+@media (max-width: 420px){
+    .timestamp-comment-div{
+        font-size: 16px;
+    }
+}
