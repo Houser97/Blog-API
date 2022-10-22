@@ -36,3 +36,15 @@
 .a-github{
     color: white;
 }
+
+@media (max-width: 680px) {
+    .footer{
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    .footer .logo{
+        font-size: 36px;
+    }
+}
