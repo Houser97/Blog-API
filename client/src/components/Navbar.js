@@ -77,23 +77,28 @@ const Navbar = ({isInHome, isInLogIn}) => {
         
         <div ref={nav} className='navbar-sm'>
             {isInHome ? (
-                <div className='navbar-item a-links'>
-                    <a href = '#home' className={`link-navbar first-navbar-link 
-                    ${activeLink === 'Home' ? 'activeLink' : ''}`} 
-                    onClick={() => setActiveLink('Home')}>Home</a>
+                isToken ? ( 
+                    <div className='navbar-item a-links'>
+                        <a href = '#home' className={`link-navbar first-navbar-link 
+                        ${activeLink === 'Home' ? 'activeLink' : ''}`} 
+                        onClick={() => setActiveLink('Home')}>Home</a>
 
-                    <a href = '#posts' className={`link-navbar ${activeLink === 'Posts' ? 'activeLink' : ''}`} 
-                    onClick={() => setActiveLink('Posts')}>Posts</a>
+                        <a href = '#posts' className={`link-navbar ${activeLink === 'Posts' ? 'activeLink' : ''}`} 
+                        onClick={() => setActiveLink('Posts')}>Posts</a>
+                        <a href = '/unpublished-posts' className='unpublished-link'>Unpublished</a>
+                        <a href='/create-post' className='create-link'>Create</a>
+                    </div>
+                ):(
+                    <div className='navbar-item a-links'>
+                        <a href = '#home' className={`link-navbar first-navbar-link 
+                        ${activeLink === 'Home' ? 'activeLink' : ''}`} 
+                        onClick={() => setActiveLink('Home')}>Home</a>
 
-                    {isToken ? ( 
-                        <div className='token-home'>
-                            <a href = '/unpublished-posts' className='unpublished-link'>Unpublished</a>
-                            <a href='/create-post' className='create-link'>Create</a>
-                        </div>
-                    ):(
+                        <a href = '#posts' className={`link-navbar ${activeLink === 'Posts' ? 'activeLink' : ''}`} 
+                        onClick={() => setActiveLink('Posts')}>Posts</a>
                         <a href='/login' className='sign-in'>Log in</a>
-                    )}
-                </div>
+                    </div>
+                )
             ) : (
                 isInLogIn ? (
                     <div className='navbar-item a-links'>
