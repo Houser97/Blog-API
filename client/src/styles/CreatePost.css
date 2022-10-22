@@ -144,6 +144,6 @@ input[type = 'radio']:checked + .label-radio:before {
 
 @media (max-width: 430px){
     .published-div{
-        font-size: 25px;
+        flex-flow: column;
     }
 }
