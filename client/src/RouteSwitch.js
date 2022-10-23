@@ -11,17 +11,19 @@ export const isTokenContext = createContext();
 
 const RouteSwitch = () => {
 
-  const token = JSON.parse(localStorage.getItem('token'))
+  const token = JSON.parse(localStorage.getItem('token')) || false
   const [isToken, setIsToken] = useState(false)
 
   useEffect(() => {
-    fetch('/api/check-token', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token.token}`,
-      },
-    }).then(response => response.json()).then(data => setIsToken(data))
+    if(token){
+      fetch('/api/check-token', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token.token}`,
+        },
+      }).then(response => response.json()).then(data => setIsToken(data))
+    } 
   }, [])
 
   const ProviderValue = {
