@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import PostComponent from '../components/PostComponent'
+import '../styles/Post.css'
 
 const Post = () => {
 
