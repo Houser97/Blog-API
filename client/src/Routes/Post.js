@@ -7,13 +7,17 @@ import PostComponent from '../components/PostComponent'
 const Post = () => {
 
   const [backendPost, setBackendTitle] = useState('')
+  const [isPost, setIsPost] = useState(false)
 
   let {title} = useParams();
 
   useEffect(() => {
     fetch(`/api/post/${title}`).
       then(response => response.json()).
-      then(data => setBackendTitle(data)).catch(() => setBackendTitle('error'))
+      then(data => {
+        setBackendTitle(data)
+        setIsPost(true)
+      }).catch(() => setBackendTitle('error'))
   }, [])
 
   /*
@@ -25,7 +29,7 @@ const Post = () => {
   return (
     <div className='Post-website'>
         <Navbar isInHome = {false} isInLogIn = {false}/>
-        {backendPost === '' ? '' : <PostComponent post = {backendPost.post} comments = {backendPost.comments}/>}
+        {!isPost ? <div className='loading-post'>Loading...</div> : <PostComponent post = {backendPost.post} comments = {backendPost.comments}/>}
         <Footer />
     </div>
   )
