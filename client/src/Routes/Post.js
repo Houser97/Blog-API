@@ -18,6 +18,7 @@ const Post = () => {
       then(data => {
         setBackendTitle(data)
         setIsPost(true)
+        window.scrollTo(0,0)
       }).catch(() => setBackendTitle('error'))
   }, [])
 
