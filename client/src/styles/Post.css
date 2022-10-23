@@ -1,4 +1,20 @@
-.Post-website{
+.loading-post{
+    padding: 160px 80px;
     width: 100%;
-    padding: 100px 30px;
+    color:white;
+    display: flex; flex-flow: column;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    text-align: center;
+    font-family: 'MonteCarlo', cursive;
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+@media (max-width:500px) {
+    .loading-post{
+        font-size: 59px;
+    }
 }
