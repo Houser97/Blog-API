@@ -6,7 +6,6 @@
     font-family: 'Passion One', cursive;
     position: fixed;
     z-index: 21;
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
