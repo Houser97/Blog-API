@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "homepage": "https://my-blog-api.onrender.com",
   "version": "0.1.0",
   "proxy": "https://blog-api-k3qd.onrender.com",
   "private": true,
