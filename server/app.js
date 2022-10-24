@@ -8,11 +8,6 @@ const cors = require('cors');
 
 let jwt = require('jsonwebtoken')
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const postRouter = require('./routes/post');
-const apiRouter = require('./routes/api');
-
 var app = express();
 app.use(cors());
 
@@ -20,6 +15,11 @@ app.use(cors());
 if(process.env.NODE_ENV !== 'production'){
   require('dotenv').config();
 };
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+const postRouter = require('./routes/post');
+const apiRouter = require('./routes/api');
 
 // Colocar link de acceso a base de datos.
 const MongoDB = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.hfuvxe2.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`
