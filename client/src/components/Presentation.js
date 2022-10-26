@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/presentation.css'
-import bg_image from '../assets/bg-blog.jpg'
 
 const Presentation = () => {
 
