@@ -14,3 +14,13 @@
     justify-content: center; align-items: center;
     gap: 50px;
 }
+
+.error{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'MonteCarlo', cursive;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
