@@ -32,7 +32,7 @@ const RouteSwitch = () => {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename = 'Blog-API'>
       <isTokenContext.Provider value={[isToken, setIsToken]}>
           <Routes>
               <Route path='/' element = {<App />} />

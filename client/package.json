@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "https://my-blog-api.onrender.com",
+  "homepage": "http://houser97.github.io/Blog-API",
   "version": "0.1.0",
   "proxy": "https://blog-api-k3qd.onrender.com",
   "private": true,
@@ -20,6 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,6 +44,7 @@
   },
   "devDependencies": {
     "dateformat": "^5.0.3",
+    "gh-pages": "^4.0.0",
     "html-react-parser": "^3.0.4",
     "moment": "^2.29.4",
     "react-router-dom": "^6.4.1"
