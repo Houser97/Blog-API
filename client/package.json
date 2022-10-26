@@ -1,6 +1,5 @@
 {
   "name": "client",
-  "homepage": "http://houser97.github.io/Blog-API",
   "version": "0.1.0",
   "proxy": "https://blog-api-k3qd.onrender.com",
   "private": true,
