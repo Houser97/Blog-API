@@ -26,7 +26,7 @@ const Navbar = ({isInHome, isInLogIn}) => {
     return (
     <nav className='navbar'>
         <div className='navbar-sub-container'>
-            <div className='navbar-item logo'>My Blog-API</div>
+            <a href='/' className='navbar-item logo'>My Blog-API</a>
             {isInHome ? (
                 <div className='navbar-item a-links'>
                     <a href = '#home' className={`link-navbar first-navbar-link 
