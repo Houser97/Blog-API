@@ -51,7 +51,7 @@ const CommentsSection = ({title, commentInfo}) => {
               )
             })
           ):(<div className='no-comments'>
-            There are no comments for this Post
+            There are no comments for this Post.
           </div>)}
         </div>
     </div>
