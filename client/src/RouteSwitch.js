@@ -16,7 +16,7 @@ const RouteSwitch = () => {
 
   useEffect(() => {
     if(token){
-      fetch('/api/check-token', {
+      fetch('https://blog-api-k3qd.onrender.com/api/check-token', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
