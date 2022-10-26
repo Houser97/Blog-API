@@ -10,7 +10,7 @@ const CreatePost = () => {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [published, setPublished] = useState(true)
-  const [token, setToken] = useState(JSON.parse(localStorage.getItem('token'))) // Convieret objeto string en objeto
+  const token = JSON.parse(localStorage.getItem('token')) // Convieret objeto string en objeto
   const navigate = useNavigate();
 
   const createPostAPI = (e) => {
