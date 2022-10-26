@@ -31,7 +31,7 @@ const UnpublishedList = () => {
                     })}
                 </div>
             ):(
-                <div className='error'>There was an error</div>    
+                <div className='error'>There was an error.</div>    
             )
         ):(
             <div className='loading-posts'>Loading ...</div>
