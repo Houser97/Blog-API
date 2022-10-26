@@ -15,7 +15,7 @@ const CreatePost = () => {
 
   const createPostAPI = (e) => {
     e.preventDefault()
-    fetch('/api/post/create-post', {
+    fetch('https://blog-api-k3qd.onrender.com/api/post/create-post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

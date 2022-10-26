@@ -42,7 +42,7 @@ const Edit = () => {
 
     const UpdatePostAPI = (e) => {
         e.preventDefault();
-        fetch('/api/edit/post', {
+        fetch('https://blog-api-k3qd.onrender.com/api/edit/post', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

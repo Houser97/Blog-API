@@ -11,7 +11,7 @@ const CommentCard = ({data}) => {
     const [isToken] = useContext(isTokenContext);
 
     const DeleteCommentAPI = (e) => {
-      fetch(`/api/comment/delete/${_id}`, {
+      fetch(`https://blog-api-k3qd.onrender.com/api/comment/delete/${_id}`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

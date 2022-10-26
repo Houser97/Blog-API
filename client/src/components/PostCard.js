@@ -19,7 +19,7 @@ const PostCard = ({title, timestamp, _id}) => {
 
     const DeletePostAPI = (e) => {
         const token = JSON.parse(localStorage.getItem('token'));
-        fetch(`/api/delete/post/${_id}`, {
+        fetch(`https://blog-api-k3qd.onrender.com/api/delete/post/${_id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

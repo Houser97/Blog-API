@@ -13,7 +13,7 @@ const Post = () => {
   let {title} = useParams();
 
   useEffect(() => {
-    fetch(`/api/post/${title}`).
+    fetch(`https://blog-api-k3qd.onrender.com/api/post/${title}`).
       then(response => response.json()).
       then(data => {
         setBackendTitle(data)
