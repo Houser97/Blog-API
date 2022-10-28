@@ -8,7 +8,7 @@
 .form-login-wrapper{
     width: 100%;
     padding: 140px 50px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
     background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
     display: flex; 
     justify-content: center;
@@ -75,7 +75,8 @@
 
 @media (max-width: 1100px) {
     .form-login-wrapper{
-        padding: 60px 30px;
+        padding: 140px 30px;
+        padding-bottom: 60px;
     }
 
     .form-login{
@@ -90,7 +91,8 @@
     }
 
     .form-login-wrapper{
-        padding: 60px 10px;
+        padding: 140px 10px;
+        padding-bottom: 60px;
     }
 }
 
