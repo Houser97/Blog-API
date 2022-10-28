@@ -16,9 +16,6 @@ if(process.env.NODE_ENV !== 'production'){
   require('dotenv').config();
 };
 
-// Se sirve el archivo estático del FRONTEND
-app.use(express.static(path.resolve(__dirname, '../public', 'index.html')))
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const postRouter = require('./routes/post');
@@ -43,6 +40,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(path.join(__dirname, 'public')), 'index.html')
+})
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
