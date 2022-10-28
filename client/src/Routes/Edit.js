@@ -19,7 +19,7 @@ const Edit = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`/api/post/edit/${title}`)
+        fetch(`https://blog-api-k3qd.onrender.com/api/post/edit/${title}`)
         .then(response => response.json())
         .then(data => {
             setPost(() => data[0]);
