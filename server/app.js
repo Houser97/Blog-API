@@ -16,6 +16,9 @@ if(process.env.NODE_ENV !== 'production'){
   require('dotenv').config();
 };
 
+// Se sirve el archivo estático del FRONTEND
+app.use(express.static(path.resolve(__dirname, '../public', 'index.html')))
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const postRouter = require('./routes/post');
