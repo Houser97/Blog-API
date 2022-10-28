@@ -42,9 +42,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(path.join(__dirname, 'public')), 'index.html')
+  res.sendFile(path.join(__dirname, 'public/index.html'))
 })
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
