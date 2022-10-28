@@ -116,7 +116,7 @@
 
 @media (max-width: 880px) {
     .post-component{
-        padding: 50px 40px;
+        padding: 120px 40px;
     }
 
     .delete-msg-prevention-container .delete-msg-prevention-2{
@@ -126,7 +126,7 @@
 
 @media (max-width: 680px) {
     .post-component{
-        padding: 50px 20px;
+        padding: 120px 20px;
     }
 
     .post-component-body{
