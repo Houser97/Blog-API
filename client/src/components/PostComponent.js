@@ -22,7 +22,7 @@ const PostComponent = ({post, comments}) => {
   }
 
   const DeletePostAPI = () => {
-    fetch(`https://blog-api-k3qd.onrender.com/api/delete/post/${_id}`, {
+    fetch(`/api/delete/post/${_id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
