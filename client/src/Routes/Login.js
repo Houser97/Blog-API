@@ -9,6 +9,7 @@ const Login = () => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState(false)
 
   const [ ,setIsToken] = useContext(isTokenContext)
 
@@ -30,6 +31,7 @@ const Login = () => {
         navigate('/')
       } else {
         setIsToken(data)
+        setError(true)
       }
     })
   }
@@ -51,6 +53,9 @@ const Login = () => {
                 <label htmlFor='pwd' className='username-label label-login'>Password:</label>
                 <input type='password' className='input-username input-login' name='password' id='pwd'
                 onChange={(e) => setPassword(e.target.value)}></input>
+            </div>
+            <div className={`error-login ${error ? 'hide-error' : ''}`}>
+                Oops, it seems that there was an error.
             </div>
             <button className='login-button'>Submit</button>
         </form>
