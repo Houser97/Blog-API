@@ -8,7 +8,7 @@ const PostList = () => {
   const [postClass, setPostClass] = useState(false)
 
   useEffect(() => {
-    fetch('https://blog-api-k3qd.onrender.com/api/posts').
+    fetch('/api/posts').
         then(response => response.json()).
         then(data => {
           setBackendPosts(data)
