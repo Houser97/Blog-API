@@ -17,7 +17,7 @@ const Login = () => {
   const LoginApi = (e) => {
     e.preventDefault()
     if(!username || !password){return false}
-    fetch('https://blog-api-k3qd.onrender.com/api/login', {
+    fetch('/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -19,7 +19,7 @@ const Edit = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`https://blog-api-k3qd.onrender.com/api/post/edit/${title}`)
+        fetch(`/api/post/edit/${title}`)
         .then(response => response.json())
         .then(data => {
             setPost(() => data[0]);
@@ -42,7 +42,7 @@ const Edit = () => {
 
     const UpdatePostAPI = (e) => {
         e.preventDefault();
-        fetch('https://blog-api-k3qd.onrender.com/api/edit/post', {
+        fetch('/api/edit/post', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
