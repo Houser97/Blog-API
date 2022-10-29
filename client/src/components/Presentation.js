@@ -48,7 +48,7 @@ const Presentation = () => {
             <p className='presentation-p'>
                 This blog was created as a project for The Odin Project. It involves knowledge about NodeJS and React, in which the former
                 is used as the backend and the latter as the frontend. Likewise, both of them talk to each other by means of an API. On the other
-                hand, the server is hosted on Render whereas the frontend is on Netlify.
+                hand, both the backend and frontend are hosted on Render.
             </p>
         </div>
     </section>
