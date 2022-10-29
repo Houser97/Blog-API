@@ -18,7 +18,7 @@ const CommentsSection = ({title, commentInfo}) => {
 
   const createCommentAPI = (e) => {
     if(!username || !comment) return false;
-    fetch('https://blog-api-k3qd.onrender.com/api/post/create-comment', {
+    fetch('/api/post/create-comment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
