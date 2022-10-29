@@ -33,7 +33,7 @@ const Login = () => {
         setIsToken(data)
         setError(true)
       }
-    })
+    }).catch(() => setError(true))
   }
   
   return (
@@ -54,7 +54,7 @@ const Login = () => {
                 <input type='password' className='input-username input-login' name='password' id='pwd'
                 onChange={(e) => setPassword(e.target.value)}></input>
             </div>
-            <div className={`error-login ${error ? 'hide-error' : ''}`}>
+            <div className={`error-login ${error ? 'show-error' : ''}`}>
                 Oops, it seems that there was an error.
             </div>
             <button className='login-button'>Submit</button>
