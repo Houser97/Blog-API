@@ -58,15 +58,18 @@ exports.api_fetch_unpublished_posts = (req, res, next) => {
 // Controlador para autenticación y obtener Token
 exports.api_login_token = function(req, res, next){
     User.find({'username': req.body.username}).exec(function(err, user){
-        if(err) return next(err)
-        if(user[0].password === req.body.password){
-            jwt.sign({user}, `${process.env.SECRET_KEY}`, {expiresIn: '6h'} ,(err, token) => {
-                if(err) return next(err)
-                return res.json({token})
-            })
-        } else {
+        if(err || user.length === 0){
             return res.json(false)
-        }
+        } else {
+            if(user[0].password === req.body.password){
+                jwt.sign({user}, `${process.env.SECRET_KEY}`, {expiresIn: '6h'} ,(err, token) => {
+                    if(err) return next(err)
+                    return res.json({token})
+                })
+            } else {
+                return res.json(false)
+            }
+        } 
     });
 }
 
