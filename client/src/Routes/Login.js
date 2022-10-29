@@ -29,6 +29,7 @@ const Login = () => {
         setIsToken(data)
         localStorage.setItem('token', JSON.stringify(data))
         navigate('/')
+        setError(false)
       } else {
         setIsToken(data)
         setError(true)
