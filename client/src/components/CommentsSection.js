@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../styles/commentsSection.css'
 import CommentCard from './CommentCard'
 
@@ -17,6 +18,7 @@ const CommentsSection = ({title, commentInfo}) => {
   }, [])
 
   const createCommentAPI = (e) => {
+    e.preventDefault();
     if(!username || !comment) return false;
     fetch('/api/post/create-comment', {
       method: 'POST',
@@ -26,7 +28,7 @@ const CommentsSection = ({title, commentInfo}) => {
       body: JSON.stringify({username, comment, title})
     })
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(() => window.location.reload(false))
   }
 
   return (
