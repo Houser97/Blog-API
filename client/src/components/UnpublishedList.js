@@ -8,7 +8,7 @@ const UnpublishedList = () => {
     const token = JSON.parse(localStorage.getItem('token'))
 
     useEffect(() => {
-        fetch('https://blog-api-k3qd.onrender.com/api/unpublished-posts', {
+        fetch('/api/unpublished-posts', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
