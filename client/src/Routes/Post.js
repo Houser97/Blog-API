@@ -13,12 +13,12 @@ const Post = () => {
   let {title} = useParams();
 
   useEffect(() => {
+    window.scrollTo(0,0)
     fetch(`/api/post/${title}`).
       then(response => response.json()).
       then(data => {
         setBackendTitle(data)
         setIsPost(true)
-        window.scrollTo(0,0)
       }).catch(() => setBackendTitle('error'))
   }, [])
 
