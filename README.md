@@ -2,6 +2,8 @@
 
 ## A fully functional example project that leverages MERN Stack, JWT autentication and deployment in Render
 
+![Image](client/src/assets/BlogAPI.JPG)
+
 This project arose as an assignment along the curriculum provided by the site [The Odin Project](https://www.theodinproject.com/), where the main interest of the application is to implement a REST API to communicate the client (React) and the server (Express). Also, the application employs JWT (JsonWebToken) to provide the owner with authentication and to grant operations that involve:
 
 * Blog creation.
