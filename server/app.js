@@ -4,12 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let mongoose = require('mongoose');
-const cors = require('cors');
 
 let jwt = require('jsonwebtoken')
 
 var app = express();
-app.use(cors());
 
 // Importar DOTENV.
 if(process.env.NODE_ENV !== 'production'){
